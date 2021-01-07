@@ -135,4 +135,14 @@
 `define kern2bias 8'b11110010
 `define kern3bias 8'b11111000
 `define kern4bias 8'b11111010
- 
+
+`define densebias0 8'h03
+`define densebias1 8'h0f
+`define densebias2 8'hff
+`define densebias3 8'hf3
+`define densebias4 8'h01
+`define densebias5 8'h00
+`define densebias6 8'h03
+`define densebias7 8'h07
+`define densebias8 8'hf6
+`define densebias9 8'hf3

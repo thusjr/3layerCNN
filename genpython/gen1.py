@@ -16,10 +16,10 @@
 #                     end")
 
 "+str(i)+"
-for i in range(7):
+for i in range(10):
     # for j in range(5):
         print("\
-                ifmap [addrimp + "+str(i)+"] <= q_IFRAM["+str(i*8+7)+":"+str(i*8)+"];\
+                numout"+str(i)+" <= numout"+str(i)+" + $signed(`densebias"+str(i)+");\
 ")
 
                 # ifmap [addrimp + 0] <=  q_IFRAM[0:7];

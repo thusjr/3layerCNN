@@ -482,11 +482,11 @@ always @(posedge clk or negedge rst) begin
             plusi33 <= plusi24 + plusi31;
 //          6 7 8 9-----------------------------
             case(kernelNumber5) 
-                0:conv_o0 <= plusi32 + plusi33 + `kern0bias;
-                1:conv_o0 <= plusi32 + plusi33 + `kern1bias;
-                2:conv_o0 <= plusi32 + plusi33 + `kern2bias;
-                3:conv_o0 <= plusi32 + plusi33 + `kern3bias;
-                4:conv_o0 <= plusi32 + plusi33 + `kern4bias;
+                0:conv_o0 <= plusi32 + plusi33 + $signed(`kern0bias);
+                1:conv_o0 <= plusi32 + plusi33 + $signed(`kern1bias);
+                2:conv_o0 <= plusi32 + plusi33 + $signed(`kern2bias);
+                3:conv_o0 <= plusi32 + plusi33 + $signed(`kern3bias);
+                4:conv_o0 <= plusi32 + plusi33 + $signed(`kern4bias);
             endcase 
             conv_o1 <= conv_o0;
             conv_o2 <= conv_o1;
@@ -531,13 +531,13 @@ always @(posedge clk or negedge rst) begin
             end 
 //          12 quantic--------------------------
             /*************
-             量化处理�???
-            输入�???0~255�???9bit，weight�???5bit量化
-            �???后得�???21bit
+             量化处理�???
+            输入�???0~255�???9bit，weight�???5bit量化
+            �???后得�???21bit
             要压缩到8bit
-            1+6+1�??? 也就是说，右�???4�???
-            �???�???01111111_1111
-            �???�???10000000_0000
+            1+6+1�??? 也就是说，右�???4�???
+            �???�???01111111_1111
+            �???�???10000000_0000
             *************/
             startfc3 <= startfc2;
             if(startfc2 == 1) begin
@@ -559,11 +559,11 @@ always @(posedge clk or negedge rst) begin
                 FCweight8 <= q_FCROM[71:64];
             end 
 //          13----------------------------------
-            //FC �???要载入数�???
+            //FC �???要载入数�???
             /*************
             数据规模
             8*8 = 15 输入
-            输出�???�???720个数字相加（numberout1~10�???
+            输出�???�???720个数字相加（numberout1~10�???
             2 4 8 16 32 64 128 256 512 1024
             1 2 3 4 5   6  7   8   9   10
             扩大十位就可以了
@@ -600,6 +600,19 @@ always @(posedge clk or negedge rst) begin
         `Stop: begin
 //          1----------------------------------
             case (finalstate)
+            0:begin
+                finalstate <= 1;
+                numout0 <= numout0 + $signed(`densebias0);
+                numout1 <= numout1 + $signed(`densebias1);
+                numout2 <= numout2 + $signed(`densebias2);
+                numout3 <= numout3 + $signed(`densebias3);
+                numout4 <= numout4 + $signed(`densebias4);
+                numout5 <= numout5 + $signed(`densebias5);
+                numout6 <= numout6 + $signed(`densebias6);
+                numout7 <= numout7 + $signed(`densebias7);
+                numout8 <= numout8 + $signed(`densebias8);
+                numout9 <= numout9 + $signed(`densebias9);      
+                end
             1:begin
                 if($signed(numout0) >= $signed(numout9)) begin
                     cmp0 <= numout0;
