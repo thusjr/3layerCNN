@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Thu Jan  7 19:24:38 2021
+// Date        : Thu Jan  7 23:53:57 2021
 // Host        : LAPTOP-PD9C7IFG running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
-//               d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_stub.v
+//               D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_stub.v
 // Design      : IFRAM
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7vx485tffg1157-1

@@ -32,7 +32,7 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_ip -quiet d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM.xci
+read_ip -quiet D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM.xci
 set_property used_in_implementation false [get_files -all d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -88,32 +88,32 @@ write_checkpoint -force -noxdef IFRAM.dcp
 create_report "IFRAM_synth_1_synth_report_utilization_0" "report_utilization -file IFRAM_utilization_synth.rpt -pb IFRAM_utilization_synth.pb"
 
 if { [catch {
-  file copy -force D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.runs/IFRAM_synth_1/IFRAM.dcp d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM.dcp
+  file copy -force D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.runs/IFRAM_synth_1/IFRAM.dcp D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_stub.v
+  write_verilog -force -mode synth_stub D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_stub.vhdl
+  write_vhdl -force -mode synth_stub D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_sim_netlist.v
+  write_verilog -force -mode funcsim D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -123,32 +123,32 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.runs/IFRAM_synth_1/IFRAM.dcp d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM.dcp
+  file copy -force D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.runs/IFRAM_synth_1/IFRAM.dcp D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.runs/IFRAM_synth_1/IFRAM_stub.v d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_stub.v
+  file rename -force D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.runs/IFRAM_synth_1/IFRAM_stub.v D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.runs/IFRAM_synth_1/IFRAM_stub.vhdl d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_stub.vhdl
+  file rename -force D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.runs/IFRAM_synth_1/IFRAM_stub.vhdl D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.runs/IFRAM_synth_1/IFRAM_sim_netlist.v d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_sim_netlist.v
+  file rename -force D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.runs/IFRAM_synth_1/IFRAM_sim_netlist.v D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.runs/IFRAM_synth_1/IFRAM_sim_netlist.vhdl d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_sim_netlist.vhdl
+  file rename -force D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.runs/IFRAM_synth_1/IFRAM_sim_netlist.vhdl D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -157,13 +157,13 @@ if { [catch {
 
 if {[file isdir D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.ip_user_files/ip/IFRAM]} {
   catch { 
-    file copy -force d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_stub.v D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.ip_user_files/ip/IFRAM
+    file copy -force D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_stub.v D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.ip_user_files/ip/IFRAM
   }
 }
 
 if {[file isdir D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.ip_user_files/ip/IFRAM]} {
   catch { 
-    file copy -force d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_stub.vhdl D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.ip_user_files/ip/IFRAM
+    file copy -force D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_stub.vhdl D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.ip_user_files/ip/IFRAM
   }
 }
 file delete __synthesis_is_running__

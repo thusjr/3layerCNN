@@ -344,7 +344,7 @@ always @(posedge clk or negedge rst) begin
                 numout8 <= 0;
                 numout9 <= 0;
                 addrimp <= 0;
-                finalstate <= 1;
+                finalstate <= 0;
                 done <= 0;
                 addr_IFRAM <= 0;
                 kernelNumber <= 1;
@@ -658,12 +658,12 @@ always @(posedge clk or negedge rst) begin
             *************/
             startfc3 <= startfc2;
             if(startfc2 == 1) begin
-                if(pool_o > $signed(21'b0_00000000_01111111_1111))begin
+                if(pool_o > $signed(21'b0_0000000_0111_1111_11111))begin
                     quantic <= 8'b01111111;
                 end else if(pool_o < 0)begin
                     quantic <= 0;
                 end else begin
-                    quantic <= pool_o>>>4;
+                    quantic <= pool_o>>>5;
                 end 
                 FCweight0 <= q_FCROM[127:120];
                 FCweight1 <= q_FCROM[119:112];

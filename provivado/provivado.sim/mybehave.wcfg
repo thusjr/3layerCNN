@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1160574fs"></ZoomStartTime>
-      <ZoomEndTime time="3063630fs"></ZoomEndTime>
-      <Cursor1Time time="1480000fs"></Cursor1Time>
+      <ZoomStartTime time="30174000fs"></ZoomStartTime>
+      <ZoomEndTime time="30930001fs"></ZoomEndTime>
+      <Cursor1Time time="30462000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="426"></NameColumnWidth>
-      <ValueColumnWidth column_width="491"></ValueColumnWidth>
+      <ValueColumnWidth column_width="475"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="35" />
+   <WVObjectSize size="36" />
    <wvobject fp_name="/testbench/done" type="logic">
       <obj_property name="ElementShortName">done</obj_property>
       <obj_property name="ObjectShortName">done</obj_property>
@@ -62,6 +62,87 @@
       <obj_property name="ElementShortName">finalstate[2:0]</obj_property>
       <obj_property name="ObjectShortName">finalstate[2:0]</obj_property>
    </wvobject>
+   <wvobject fp_name="/testbench/mymain/quantic" type="array">
+      <obj_property name="ElementShortName">quantic[7:0]</obj_property>
+      <obj_property name="ObjectShortName">quantic[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/mymain/numout0" type="array">
+      <obj_property name="ElementShortName">numout0[24:0]</obj_property>
+      <obj_property name="ObjectShortName">numout0[24:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/mymain/numout1" type="array">
+      <obj_property name="ElementShortName">numout1[24:0]</obj_property>
+      <obj_property name="ObjectShortName">numout1[24:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/mymain/numout2" type="array">
+      <obj_property name="ElementShortName">numout2[24:0]</obj_property>
+      <obj_property name="ObjectShortName">numout2[24:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/mymain/numout3" type="array">
+      <obj_property name="ElementShortName">numout3[24:0]</obj_property>
+      <obj_property name="ObjectShortName">numout3[24:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/mymain/numout4" type="array">
+      <obj_property name="ElementShortName">numout4[24:0]</obj_property>
+      <obj_property name="ObjectShortName">numout4[24:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/mymain/numout5" type="array">
+      <obj_property name="ElementShortName">numout5[24:0]</obj_property>
+      <obj_property name="ObjectShortName">numout5[24:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/mymain/numout6" type="array">
+      <obj_property name="ElementShortName">numout6[24:0]</obj_property>
+      <obj_property name="ObjectShortName">numout6[24:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/mymain/numout7" type="array">
+      <obj_property name="ElementShortName">numout7[24:0]</obj_property>
+      <obj_property name="ObjectShortName">numout7[24:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/mymain/numout8" type="array">
+      <obj_property name="ElementShortName">numout8[24:0]</obj_property>
+      <obj_property name="ObjectShortName">numout8[24:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/mymain/numout9" type="array">
+      <obj_property name="ElementShortName">numout9[24:0]</obj_property>
+      <obj_property name="ObjectShortName">numout9[24:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/mymain/plusi24" type="array">
+      <obj_property name="ElementShortName">plusi24[20:0]</obj_property>
+      <obj_property name="ObjectShortName">plusi24[20:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/mymain/conv_o0" type="array">
+      <obj_property name="ElementShortName">conv_o0[20:0]</obj_property>
+      <obj_property name="ObjectShortName">conv_o0[20:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/mymain/pool0" type="array">
+      <obj_property name="ElementShortName">pool0[20:0]</obj_property>
+      <obj_property name="ObjectShortName">pool0[20:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/mymain/pool_o" type="array">
+      <obj_property name="ElementShortName">pool_o[20:0]</obj_property>
+      <obj_property name="ObjectShortName">pool_o[20:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/mymain/FCweight0" type="array">
+      <obj_property name="ElementShortName">FCweight0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">FCweight0[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/mymain/FCout0" type="array">
+      <obj_property name="ElementShortName">FCout0[14:0]</obj_property>
+      <obj_property name="ObjectShortName">FCout0[14:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
    <wvobject fp_name="/testbench/mymain/cmp0" type="array">
       <obj_property name="ElementShortName">cmp0[24:0]</obj_property>
       <obj_property name="ObjectShortName">cmp0[24:0]</obj_property>
@@ -97,69 +178,5 @@
    <wvobject fp_name="/testbench/mymain/cmp8" type="array">
       <obj_property name="ElementShortName">cmp8[24:0]</obj_property>
       <obj_property name="ObjectShortName">cmp8[24:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/numout0" type="array">
-      <obj_property name="ElementShortName">numout0[24:0]</obj_property>
-      <obj_property name="ObjectShortName">numout0[24:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/numout1" type="array">
-      <obj_property name="ElementShortName">numout1[24:0]</obj_property>
-      <obj_property name="ObjectShortName">numout1[24:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/numout2" type="array">
-      <obj_property name="ElementShortName">numout2[24:0]</obj_property>
-      <obj_property name="ObjectShortName">numout2[24:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/numout3" type="array">
-      <obj_property name="ElementShortName">numout3[24:0]</obj_property>
-      <obj_property name="ObjectShortName">numout3[24:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/numout4" type="array">
-      <obj_property name="ElementShortName">numout4[24:0]</obj_property>
-      <obj_property name="ObjectShortName">numout4[24:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/numout5" type="array">
-      <obj_property name="ElementShortName">numout5[24:0]</obj_property>
-      <obj_property name="ObjectShortName">numout5[24:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/numout6" type="array">
-      <obj_property name="ElementShortName">numout6[24:0]</obj_property>
-      <obj_property name="ObjectShortName">numout6[24:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/numout7" type="array">
-      <obj_property name="ElementShortName">numout7[24:0]</obj_property>
-      <obj_property name="ObjectShortName">numout7[24:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/numout8" type="array">
-      <obj_property name="ElementShortName">numout8[24:0]</obj_property>
-      <obj_property name="ObjectShortName">numout8[24:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/numout9" type="array">
-      <obj_property name="ElementShortName">numout9[24:0]</obj_property>
-      <obj_property name="ObjectShortName">numout9[24:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/plusi24" type="array">
-      <obj_property name="ElementShortName">plusi24[20:0]</obj_property>
-      <obj_property name="ObjectShortName">plusi24[20:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/conv_o0" type="array">
-      <obj_property name="ElementShortName">conv_o0[20:0]</obj_property>
-      <obj_property name="ObjectShortName">conv_o0[20:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/pool0" type="array">
-      <obj_property name="ElementShortName">pool0[20:0]</obj_property>
-      <obj_property name="ObjectShortName">pool0[20:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/pool_o" type="array">
-      <obj_property name="ElementShortName">pool_o[20:0]</obj_property>
-      <obj_property name="ObjectShortName">pool_o[20:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/FCweight0" type="array">
-      <obj_property name="ElementShortName">FCweight0[7:0]</obj_property>
-      <obj_property name="ObjectShortName">FCweight0[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/FCout0" type="array">
-      <obj_property name="ElementShortName">FCout0[14:0]</obj_property>
-      <obj_property name="ObjectShortName">FCout0[14:0]</obj_property>
    </wvobject>
 </wave_config>
