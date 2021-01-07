@@ -7,12 +7,13 @@ module main();
 input                       clk;
 input                       rst;
 input                       startFlag;
-
+output reg  done;
 /*************
 输入 9bit 8bit
 乘法 8+7+1 = 16bit
 *************/
 
+reg [2:0] finalstate;
 
 
 //multi----------------------------
@@ -72,12 +73,10 @@ input                       startFlag;
     reg signed [7:0] Multiplier44;
 //--
 
-
 //input photo 28*28----------------
     reg signed [7:0] ifmap [783:0];
     reg        [9:0] addrimp; //max=11_0000_1111=783
 //--
-
 
 //kernelNumber---------------------
     reg        [2:0] kernelNumber; 
@@ -111,12 +110,9 @@ input                       startFlag;
     reg signed [20:0] pool_o;
 //--
 
-
-
 //quantic----------------------------
     reg signed [7:0] quantic;
 //--
-
 
 //FCout----------------------------
     reg signed [14:0] FCout0;
@@ -165,44 +161,104 @@ input                       startFlag;
     reg        [3: 0] res;
 //--
 
-//multi----------------------------
+//counter----------------------------
+    reg        [10:0] counter;
+//--
+//startpool----------------------------
+    reg [1:0]  startpool ;
+//--
+//startfc----------------------------
+    reg startfc1;
+    reg startfc2;
+    reg startfc3;
+    reg startfc4;
 //--
 //multi----------------------------
 //--
 //multi----------------------------
 //--
-//multi----------------------------
+
+
+
+
+
+//ramrom----------------------------
+    reg  [9:0]   addr_FCROM;
+    wire [107:0]    q_FCROM;
+    FCROM MYFCROM(
+        .clock(clk),
+        .address(addr_FCROM),
+        .q(q_FCROM)
+    );
+
+    reg  [6:0]     addr_IFRAM;
+    wire [63:0]    q_IFRAM;
+    reg  [63:0]    data_IFRAM;
+    reg            wren_IFRAM;
+
+    IFRAM MYIFRAM(
+        .clock(clk),
+        .data(data_IFRAM),
+        .address(addr_IFRAM),
+        .q(q_IFRAM),
+        .wren(wren_IFRAM)
+    );
 //--
-//multi----------------------------
-//--
 
 
-
-
-
-
-reg   [StateLength]         State;
+//controller
 always @(posedge clk or negedge rst) begin
     if( rst == 0 ) begin
         State <= Idle;
         addrimp <= 0;
     end else begin
+
+    end
+end
+
+
+//PE
+reg   [StateLength]         State;
+always @(posedge clk or negedge rst) begin
+    if( rst == 0 ) begin
+        State <= Idle;
+        addrimp <= 0;
+        wren_IFRAM <=0;
+    end else begin
         case(State) 
             `Idle: begin
+                addrimp <= 0;
+                finalstate <= 1;
+                done <= 0;
+                addr_IFRAM <= 0;
                 if(startFlag) begin
+                    addr_IFRAM <= addr_IFRAM + 1;
                     State <= `Init;
                 end
+                startfc1 <= 0;
+                startfc2 <= 0;
+                startfc3 <= 0;
+                startfc4 <= 0;
             end
             `Init: begin
-                
-                State <= `Calcu;
+                if(addrimp == 776) begin
+                    State <= `Calcu;
+                end else 
+                addrimp <= addrimp + 7;
+                addr_IFRAM <= addr_IFRAM + 1;
+                ifmap [addrimp + 0] <=  q_IFRAM[0:7];
+                ifmap [addrimp + 1] <=  q_IFRAM[8:15];
+                ifmap [addrimp + 2] <=  q_IFRAM[16:23];
+                ifmap [addrimp + 3] <=  q_IFRAM[24:31];
+                ifmap [addrimp + 4] <=  q_IFRAM[32:39];
+                ifmap [addrimp + 5] <=  q_IFRAM[40:47];
+                ifmap [addrimp + 6] <=  q_IFRAM[48:55];
+                ifmap [addrimp + 7] <=  q_IFRAM[56:63];
+                ifmap [addrimp + 8] <=  q_IFRAM[64:71];
             end
             `Calcu: begin
 //          all---------------------------------
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
+            counter  = counter + 1;
 
             addrimp <= addrimp + 1;
             addrimp <= addrimp + 27;
@@ -347,7 +403,16 @@ always @(posedge clk or negedge rst) begin
             addrimp <= addrimp + 1;
             addrimp <= addrimp + 27;
             addrimp <= addrimp + 1;
-            addrimp <= addrimp - 23;
+            addrimp <= addrimp - 27;
+            
+            addrimp <= addrimp + 1;
+            addrimp <= addrimp + 27;
+            addrimp <= addrimp + 1;
+            if(addrimp != 667) begin
+                addrimp <= addrimp + 5;
+            end else begin
+                addrimp <= 0;
+            end
 //          1-----------------------------------
             Multiplier00 <= ifmap[addrimp+0];
             Multiplier01 <= ifmap[addrimp+1];
@@ -544,8 +609,15 @@ always @(posedge clk or negedge rst) begin
             conv_o1 <= conv_o0;
             conv_o2 <= conv_o1;
             conv_o3 <= conv_o2;
+            if(counter == 8) begin
+                startpool <= 2'b11;
+            end else if(counter > 8)begin
+                startpool <= startpool + 1;
+            end else begin
+                startpool <= 0;                
+            end
 //          10----------------------------------
-            if(startpool) begin
+            if(startpool==2'b11) begin
                 if($signed(conv_o0) >= $signed(conv_o1)) begin
                     pool0 <= conv_o0;
                 end else begin
@@ -556,14 +628,25 @@ always @(posedge clk or negedge rst) begin
                     pool1 <= conv_o2;
                 end else begin
                     pool1 <= conv_o3;
-                end                
+                end    
+
+                startfc1 <= 1; 
+                addr_FCROM <= addr_FCROM + 1;  
+                if(addr_FCROM == 720) begin //放过719   
+                    State <= `Stop;
+                end      
+            end else begin
+                startfc1 <= 0;
             end
 //          11----------------------------------
-            if($signed(pool0) >= $signed(pool1)) begin
-                pool_o <= pool0;
-            end else begin
-                pool_o <= pool1;
-            end
+            startfc2 <= startfc1;
+            if(startfc1 == 1) begin
+                if($signed(pool0) >= $signed(pool1)) begin
+                    pool_o <= pool0;
+                end else begin
+                    pool_o <= pool1;
+                end
+            end 
 //          12 quantic--------------------------
             /*************
              量化处理。
@@ -574,13 +657,25 @@ always @(posedge clk or negedge rst) begin
             最大01111111_1111
             最小10000000_0000
             *************/
-            if(pool_o > $signed(21'b0_00000000_01111111_1111))begin
-                quantic <= 8'b01111111;
-            end else if(pool_o < 0)begin
-                quantic <= 0;
-            end else begin
-                quantic <= pool_o>>>4;
-            end    
+            startfc3 <= startfc2;
+            if(startfc2 == 1) begin
+                if(pool_o > $signed(21'b0_00000000_01111111_1111))begin
+                    quantic <= 8'b01111111;
+                end else if(pool_o < 0)begin
+                    quantic <= 0;
+                end else begin
+                    quantic <= pool_o>>>4;
+                end 
+                FCweight0 <= q_FCROM[7:0];
+                FCweight1 <= q_FCROM[15:8];
+                FCweight2 <= q_FCROM[23:16];
+                FCweight3 <= q_FCROM[31:24];
+                FCweight4 <= q_FCROM[39:32];
+                FCweight5 <= q_FCROM[47:40];
+                FCweight6 <= q_FCROM[55:48];
+                FCweight7 <= q_FCROM[63:56];
+                FCweight8 <= q_FCROM[71:64];
+            end 
 //          13----------------------------------
             //FC 需要载入数据
             /*************
@@ -592,120 +687,141 @@ always @(posedge clk or negedge rst) begin
             扩大十位就可以了
             25bit
             *************/
-            FCout0 <= quantic * FCweight0;
-            FCout1 <= quantic * FCweight1;
-            FCout2 <= quantic * FCweight2;
-            FCout3 <= quantic * FCweight3;
-            FCout4 <= quantic * FCweight4;
-            FCout5 <= quantic * FCweight5;
-            FCout6 <= quantic * FCweight6;
-            FCout7 <= quantic * FCweight7;
-            FCout8 <= quantic * FCweight8;
-            FCout9 <= quantic * FCweight9;            
+            startfc4 <= startfc3;
+            if(startfc3 == 1) begin
+                FCout0 <= quantic * FCweight0;
+                FCout1 <= quantic * FCweight1;
+                FCout2 <= quantic * FCweight2;
+                FCout3 <= quantic * FCweight3;
+                FCout4 <= quantic * FCweight4;
+                FCout5 <= quantic * FCweight5;
+                FCout6 <= quantic * FCweight6;
+                FCout7 <= quantic * FCweight7;
+                FCout8 <= quantic * FCweight8;
+                FCout9 <= quantic * FCweight9; 
+            end           
 //          14----------------------------------
-            numout0 <= numout0 + FCout0;
-            numout1 <= numout1 + FCout1;
-            numout2 <= numout2 + FCout2;
-            numout3 <= numout3 + FCout3;
-            numout4 <= numout4 + FCout4;
-            numout5 <= numout5 + FCout5;
-            numout6 <= numout6 + FCout6;
-            numout7 <= numout7 + FCout7;
-            numout8 <= numout8 + FCout8;
-            numout9 <= numout9 + FCout9;
+            if(startfc4 == 1) begin
+                numout0 <= numout0 + FCout0;
+                numout1 <= numout1 + FCout1;
+                numout2 <= numout2 + FCout2;
+                numout3 <= numout3 + FCout3;
+                numout4 <= numout4 + FCout4;
+                numout5 <= numout5 + FCout5;
+                numout6 <= numout6 + FCout6;
+                numout7 <= numout7 + FCout7;
+                numout8 <= numout8 + FCout8;
+                numout9 <= numout9 + FCout9;
+            end
 //          15----------------------------------
             end
         `Stop: begin
 //          1----------------------------------
-            if($signed(numout0) >= $signed(numout9)) begin
-                cmp0 <= numout0;
-            end else begin
-                cmp0 <= numout9;
+            case (finalstate)
+            1:begin
+                if($signed(numout0) >= $signed(numout9)) begin
+                    cmp0 <= numout0;
+                end else begin
+                    cmp0 <= numout9;
+                end
+                if($signed(numout1) >= $signed(numout8)) begin
+                    cmp1 <= numout1;
+                end else begin
+                    cmp1 <= numout8;
+                end
+                if($signed(numout2) >= $signed(numout7)) begin
+                    cmp2 <= numout2;
+                end else begin
+                    cmp2 <= numout7;
+                end
+                if($signed(numout3) >= $signed(numout6)) begin
+                    cmp3 <= numout3;
+                end else begin
+                    cmp3 <= numout6;
+                end
+                if($signed(numout4) >= $signed(numout5)) begin
+                    cmp4 <= numout4;
+                end else begin
+                    cmp4 <= numout5;
+                end
+                finalstate <= 2;
             end
-            if($signed(numout1) >= $signed(numout8)) begin
-                cmp1 <= numout1;
-            end else begin
-                cmp1 <= numout8;
+    //          2----------------------------------
+            2:begin
+                finalstate <= 3;
+                if($signed(cmp0) >= $signed(cmp4)) begin
+                    cmp5 <= cmp0;
+                end else begin
+                    cmp5 <= cmp4;
+                end
+                if($signed(cmp1) >= $signed(cmp3)) begin
+                    cmp6 <= cmp1;
+                end else begin
+                    cmp6 <= cmp3;
+                end
             end
-            if($signed(numout2) >= $signed(numout7)) begin
-                cmp2 <= numout2;
-            end else begin
-                cmp2 <= numout7;
+    //          3----------------------------------
+            3: begin
+                finalstate <= 4;
+                if($signed(cmp5) >= $signed(cmp6)) begin
+                    cmp7 <= cmp5;
+                end else begin
+                    cmp7 <= cmp6;
+                end
             end
-            if($signed(numout3) >= $signed(numout6)) begin
-                cmp3 <= numout3;
-            end else begin
-                cmp3 <= numout6;
+    //          4----------------------------------
+            4:begin
+                finalstate <= 5;
+                if($signed(cmp7) >= $signed(cmp2)) begin
+                    cmp8 <= cmp7;
+                end else begin
+                    cmp8 <= cmp2;
+                end
             end
-            if($signed(numout4) >= $signed(numout5)) begin
-                cmp4 <= numout4;
-            end else begin
-                cmp4 <= numout5;
-            end
-//          2----------------------------------
-            if($signed(cmp0) >= $signed(cmp4)) begin
-                cmp5 <= cmp0;
-            end else begin
-                cmp5 <= cmp4;
-            end
-            if($signed(cmp1) >= $signed(cmp3)) begin
-                cmp6 <= cmp1;
-            end else begin
-                cmp6 <= cmp3;
-            end
-//          2----------------------------------
-            if($signed(cmp5) >= $signed(cmp6)) begin
-                cmp7 <= cmp5;
-            end else begin
-                cmp7 <= cmp6;
-            end
-//          3----------------------------------
-            if($signed(cmp7) >= $signed(cmp2)) begin
-                cmp8 <= cmp7;
-            end else begin
-                cmp8 <= cmp2;
-            end
-//          4----------------------------------
-            if(cmp8 == numout0)begin
-                res = 0;
-            end
-            else if(cmp8 == numout1)begin
-                res = 1;
-            end
-            else if(cmp8 == numout2)begin
-                res = 2;
-            end
-            else if(cmp8 == numout3)begin
-                res = 3;
-            end
-            else if(cmp8 == numout4)begin
-                res = 4;
-            end
-            else if(cmp8 == numout5)begin
-                res = 5;
-            end
-            else if(cmp8 == numout6)begin
-                res = 6;
-            end
-            else if(cmp8 == numout7)begin
-                res = 7;
-            end
-            else if(cmp8 == numout8)begin
-                res = 8;
-            end
-            else if(cmp8 == numout9)begin
-                res = 9;
-            end
+    //          5----------------------------------
+            5: begin
+                finalstate <= 1;
+                State <= `Idle;
+                done <= 1;
+                if(cmp8 == numout0)begin
+                    res = 0;
+                    
+                end
+                else if(cmp8 == numout1)begin
+                    res = 1;
+                end
+                else if(cmp8 == numout2)begin
+                    res = 2;
+                end
+                else if(cmp8 == numout3)begin
+                    res = 3;
+                end
+                else if(cmp8 == numout4)begin
+                    res = 4;
+                end
+                else if(cmp8 == numout5)begin
+                    res = 5;
+                end
+                else if(cmp8 == numout6)begin
+                    res = 6;
+                end
+                else if(cmp8 == numout7)begin
+                    res = 7;
+                end
+                else if(cmp8 == numout8)begin
+                    res = 8;
+                end
+                else if(cmp8 == numout9)begin
+                    res = 9;
+                end
+            endcase
 //          5----------------------------------
         end
-
-            
         endcase
     end
 
 
 end
-
 
 
 endmodule

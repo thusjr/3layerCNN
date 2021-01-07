@@ -1,5 +1,5 @@
-Analysis & Elaboration report for proquartus
-Mon Jan 04 01:33:27 2021
+Analysis & Synthesis report for proquartus
+Thu Jan 07 15:05:12 2021
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -7,10 +7,10 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Messages
 
 
 
@@ -34,9 +34,9 @@ refer to the applicable agreement for further details.
 
 
 +----------------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                                   ;
+; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Failed - Mon Jan 04 01:33:27 2021           ;
+; Analysis & Synthesis Status        ; Failed - Thu Jan 07 15:05:12 2021           ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; proquartus                                  ;
 ; Top-level Entity Name              ; proquartus                                  ;
@@ -53,24 +53,8 @@ refer to the applicable agreement for further details.
 +------------------------------------+---------------------------------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
 +----------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                                      ;
+; Analysis & Synthesis Settings                                                                                        ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
@@ -155,23 +139,41 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon Jan 04 01:33:16 2021
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off proquartus -c proquartus --analysis_and_elaboration
+    Info: Processing started: Thu Jan 07 15:05:00 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off proquartus -c proquartus
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file ram2porttry.v
     Info (12023): Found entity 1: ram2porttry File: D:/GradeFour/FPGA-1/project/3layerCNN/proquartus/ram2porttry.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file fcrom.v
+    Info (12023): Found entity 1: FCROM File: D:/GradeFour/FPGA-1/project/3layerCNN/proquartus/FCROM.v Line: 39
 Error (12007): Top-level design entity "proquartus" is undefined
-Error: Quartus Prime Analysis & Elaboration was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4713 megabytes
-    Error: Processing ended: Mon Jan 04 01:33:27 2021
-    Error: Elapsed time: 00:00:11
-    Error: Total CPU time (on all processors): 00:00:26
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
+    Error: Peak virtual memory: 4711 megabytes
+    Error: Processing ended: Thu Jan 07 15:05:12 2021
+    Error: Elapsed time: 00:00:12
+    Error: Total CPU time (on all processors): 00:00:28
 
 

@@ -19,7 +19,7 @@
 for i in range(9):
     # for j in range(5):
         print("\
-    reg signed [24:0] cmp"+str(i)+";   \
+                FCweight"+str(i)+" <= q_FCROM["+str(i*8+7)+":"+str(i*8)+"];\
 ")
 
 
