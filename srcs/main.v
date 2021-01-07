@@ -168,6 +168,7 @@ reg [2:0] finalstate;
 
 //counter----------------------------
     reg        [10:0] counter;
+    reg        [5:0] impcounter;
 //--
 //startpool----------------------------
     reg [1:0]  startpool ;
@@ -219,8 +220,6 @@ reg   [StateLength]         State;
 always @(posedge clk or negedge rst) begin
     if( rst == 0 ) begin
         State <= Idle;
-        addrimp <= 0;
-        wren_IFRAM <=0;
     end else begin
         case(State) 
             `Idle: begin
@@ -229,6 +228,8 @@ always @(posedge clk or negedge rst) begin
                 done <= 0;
                 addr_IFRAM <= 0;
                 kernelNumber <= 1;
+                counter <= 0;
+                impcounter <= 0;
                 kernelNumber1 <= 1;
                 kernelNumber2 <= 1;
                 kernelNumber3 <= 1;
@@ -244,6 +245,7 @@ always @(posedge clk or negedge rst) begin
                 startfc4 <= 0;
             end
             `Init: begin
+                wren_IFRAM <= 0; //禁止其他地方写入数据
                 if(addrimp == 776) begin
                     State <= `Calcu;
                 end else 
@@ -262,161 +264,22 @@ always @(posedge clk or negedge rst) begin
             `Calcu: begin
 //          all---------------------------------
             counter  = counter + 1;
-
             addrimp <= addrimp + 1;
             addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp - 27;
-            
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;
-            if(addrimp != 667) begin
-                addrimp <= addrimp + 5;
+            addrimp <= addrimp + 1;            
+            if(impcounter == 47) begin
+                impcounter <= 0;
+                if(addrimp != 667) begin
+                    addrimp <= addrimp + 5;
+                end else begin
+                    addrimp <= 0;
+                    kernelNumber = kernelNumber + 1 ; 
+                end
             end else begin
-                addrimp <= 0;
-                kernelNumber = kernelNumber + 1 ; 
+                addrimp <= addrimp - 27;
+                impcounter <= impcounter + 1;
             end
+
 //          1-----------------------------------
             kernelNumber1 <= kernelNumber; 
             Multiplier00 <= ifmap[addrimp+0];
