@@ -8,35 +8,39 @@ input                       clk;
 input                       rst;
 input                       startFlag;
 
+/*************
+输入 9bit 8bit
+乘法 8+7+1 = 16bit
+*************/
 
 
 
 //multi----------------------------
-    reg signed [14:0] multi00;
-    reg signed [14:0] multi01;
-    reg signed [14:0] multi02;
-    reg signed [14:0] multi03;
-    reg signed [14:0] multi04;
-    reg signed [14:0] multi10;
-    reg signed [14:0] multi11;
-    reg signed [14:0] multi12;
-    reg signed [14:0] multi13;
-    reg signed [14:0] multi14;
-    reg signed [14:0] multi20;
-    reg signed [14:0] multi21;
-    reg signed [14:0] multi22;
-    reg signed [14:0] multi23;
-    reg signed [14:0] multi24;
-    reg signed [14:0] multi30;
-    reg signed [14:0] multi31;
-    reg signed [14:0] multi32;
-    reg signed [14:0] multi33;
-    reg signed [14:0] multi34;
-    reg signed [14:0] multi40;
-    reg signed [14:0] multi41;
-    reg signed [14:0] multi42;
-    reg signed [14:0] multi43;
-    reg signed [14:0] multi44;
+    reg signed [15:0] multi00; 
+    reg signed [15:0] multi01;
+    reg signed [15:0] multi02;
+    reg signed [15:0] multi03;
+    reg signed [15:0] multi04;
+    reg signed [15:0] multi10;
+    reg signed [15:0] multi11;
+    reg signed [15:0] multi12;
+    reg signed [15:0] multi13;
+    reg signed [15:0] multi14;
+    reg signed [15:0] multi20;
+    reg signed [15:0] multi21;
+    reg signed [15:0] multi22;
+    reg signed [15:0] multi23;
+    reg signed [15:0] multi24;
+    reg signed [15:0] multi30;
+    reg signed [15:0] multi31;
+    reg signed [15:0] multi32;
+    reg signed [15:0] multi33;
+    reg signed [15:0] multi34;
+    reg signed [15:0] multi40;
+    reg signed [15:0] multi41;
+    reg signed [15:0] multi42;
+    reg signed [15:0] multi43;
+    reg signed [15:0] multi44;
 //--
 
 
@@ -79,45 +83,104 @@ input                       startFlag;
     reg        [2:0] kernelNumber; 
 //--
 //plusi----------------------------
-    reg signed [19:0] plusi00;
-    reg signed [19:0] plusi01;
-    reg signed [19:0] plusi02;
-    reg signed [19:0] plusi03;
-    reg signed [19:0] plusi04;
-    reg signed [19:0] plusi10;
-    reg signed [19:0] plusi11;
-    reg signed [19:0] plusi12;
-    reg signed [19:0] plusi13;
-    reg signed [19:0] plusi14;
-    reg signed [19:0] plusi20;
-    reg signed [19:0] plusi21;
-    reg signed [19:0] plusi22;
-    reg signed [19:0] plusi23;
-    reg signed [19:0] plusi24;
-    reg signed [19:0] plusi30;
-    reg signed [19:0] plusi31;
-    reg signed [19:0] plusi32;
-    reg signed [19:0] plusi33;
-    reg signed [19:0] conv_o0;
-    reg signed [19:0] conv_o1;
-    reg signed [19:0] conv_o2;
-    reg signed [19:0] conv_o3;
-    reg signed [19:0] pool0;
-    reg signed [19:0] pool1;
-    reg signed [19:0] pool_o;
+    reg signed [20:0] plusi00;
+    reg signed [20:0] plusi01;
+    reg signed [20:0] plusi02;
+    reg signed [20:0] plusi03;
+    reg signed [20:0] plusi04;
+    reg signed [20:0] plusi10;
+    reg signed [20:0] plusi11;
+    reg signed [20:0] plusi12;
+    reg signed [20:0] plusi13;
+    reg signed [20:0] plusi14;
+    reg signed [20:0] plusi20;
+    reg signed [20:0] plusi21;
+    reg signed [20:0] plusi22;
+    reg signed [20:0] plusi23;
+    reg signed [20:0] plusi24;
+    reg signed [20:0] plusi30;
+    reg signed [20:0] plusi31;
+    reg signed [20:0] plusi32;
+    reg signed [20:0] plusi33;
+    reg signed [20:0] conv_o0;
+    reg signed [20:0] conv_o1;
+    reg signed [20:0] conv_o2;
+    reg signed [20:0] conv_o3;
+    reg signed [20:0] pool0;
+    reg signed [20:0] pool1;
+    reg signed [20:0] pool_o;
 //--
 
 
+
+//quantic----------------------------
+    reg signed [7:0] quantic;
+//--
+
+
+//FCout----------------------------
+    reg signed [14:0] FCout0;
+    reg signed [14:0] FCout1;
+    reg signed [14:0] FCout2;
+    reg signed [14:0] FCout3;
+    reg signed [14:0] FCout4;
+    reg signed [14:0] FCout5;
+    reg signed [14:0] FCout6;
+    reg signed [14:0] FCout7;
+    reg signed [14:0] FCout8;
+    reg signed [14:0] FCout9;
+    reg signed [24:0] numout0;
+    reg signed [24:0] numout1;
+    reg signed [24:0] numout2;
+    reg signed [24:0] numout3;
+    reg signed [24:0] numout4;
+    reg signed [24:0] numout5;
+    reg signed [24:0] numout6;
+    reg signed [24:0] numout7;
+    reg signed [24:0] numout8;
+    reg signed [24:0] numout9;
+//--
+//FCweight----------------------------
+    reg signed [7:0] FCweight0;
+    reg signed [7:0] FCweight1;
+    reg signed [7:0] FCweight2;
+    reg signed [7:0] FCweight3;
+    reg signed [7:0] FCweight4;
+    reg signed [7:0] FCweight5;
+    reg signed [7:0] FCweight6;
+    reg signed [7:0] FCweight7;
+    reg signed [7:0] FCweight8;
+    reg signed [7:0] FCweight9;
+//--
+//cmp------------------------------
+    reg signed [24:0] cmp0;
+    reg signed [24:0] cmp1;
+    reg signed [24:0] cmp2;
+    reg signed [24:0] cmp3;
+    reg signed [24:0] cmp4;
+    reg signed [24:0] cmp5;
+    reg signed [24:0] cmp6;
+    reg signed [24:0] cmp7;
+    reg signed [24:0] cmp8;
+    reg        [3: 0] res;
+//--
+
+//multi----------------------------
+//--
+//multi----------------------------
+//--
+//multi----------------------------
+//--
+//multi----------------------------
+//--
 //multi----------------------------
 //--
 
 
-//multi----------------------------
-//--
-//multi----------------------------
-//--
-//multi----------------------------
-//--
+
+
+
+
 reg   [StateLength]         State;
 always @(posedge clk or negedge rst) begin
     if( rst == 0 ) begin
@@ -448,6 +511,7 @@ always @(posedge clk or negedge rst) begin
                     multi43 <= Multiplier43 * `kern4multi43;
                     multi44 <= Multiplier44 * `kern4multi44;
                 end
+            endcase
 //          3-----------------------------------
             plusi00 <= multi00 + multi44;
             plusi01 <= multi01 + multi43;
@@ -501,24 +565,141 @@ always @(posedge clk or negedge rst) begin
                 pool_o <= pool1;
             end
 //          12 quantic--------------------------
-            if(registers46 > $signed(28'b0000_0000_0000_0111_1111_1111_1111))begin
-                out4 <= `PosiFull;
-            end else if(registers46 < $signed(28'b1111_1111_1111_1000_0000_0000_0000))begin
-                out4 <= `NegFull;
-            end else if (registers46 >= 0 || (registers46 < 0 && registers46[7:0]==0)) begin
-                out4 <= registers46>>>8;
-            end else if(registers46 < 0 && registers46[7:0]!=0)begin
-                // out4 <= (registers46>>>8) - 1;
-                out4 <= (registers46>>>8);
-            end            
+            /*************
+             量化处理。
+            输入是0~255的9bit，weight是5bit量化
+            最后得到21bit
+            要压缩到8bit
+            1+6+1吧 也就是说，右移4位
+            最大01111111_1111
+            最小10000000_0000
+            *************/
+            if(pool_o > $signed(21'b0_00000000_01111111_1111))begin
+                quantic <= 8'b01111111;
+            end else if(pool_o < 0)begin
+                quantic <= 0;
+            end else begin
+                quantic <= pool_o>>>4;
+            end    
 //          13----------------------------------
+            //FC 需要载入数据
+            /*************
+            数据规模
+            8*8 = 15 输入
+            输出需要720个数字相加（numberout1~10）
+            2 4 8 16 32 64 128 256 512 1024
+            1 2 3 4 5   6  7   8   9   10
+            扩大十位就可以了
+            25bit
+            *************/
+            FCout0 <= quantic * FCweight0;
+            FCout1 <= quantic * FCweight1;
+            FCout2 <= quantic * FCweight2;
+            FCout3 <= quantic * FCweight3;
+            FCout4 <= quantic * FCweight4;
+            FCout5 <= quantic * FCweight5;
+            FCout6 <= quantic * FCweight6;
+            FCout7 <= quantic * FCweight7;
+            FCout8 <= quantic * FCweight8;
+            FCout9 <= quantic * FCweight9;            
 //          14----------------------------------
+            numout0 <= numout0 + FCout0;
+            numout1 <= numout1 + FCout1;
+            numout2 <= numout2 + FCout2;
+            numout3 <= numout3 + FCout3;
+            numout4 <= numout4 + FCout4;
+            numout5 <= numout5 + FCout5;
+            numout6 <= numout6 + FCout6;
+            numout7 <= numout7 + FCout7;
+            numout8 <= numout8 + FCout8;
+            numout9 <= numout9 + FCout9;
 //          15----------------------------------
-//          16----------------------------------
+            end
+        `Stop: begin
+//          1----------------------------------
+            if($signed(numout0) >= $signed(numout9)) begin
+                cmp0 <= numout0;
+            end else begin
+                cmp0 <= numout9;
+            end
+            if($signed(numout1) >= $signed(numout8)) begin
+                cmp1 <= numout1;
+            end else begin
+                cmp1 <= numout8;
+            end
+            if($signed(numout2) >= $signed(numout7)) begin
+                cmp2 <= numout2;
+            end else begin
+                cmp2 <= numout7;
+            end
+            if($signed(numout3) >= $signed(numout6)) begin
+                cmp3 <= numout3;
+            end else begin
+                cmp3 <= numout6;
+            end
+            if($signed(numout4) >= $signed(numout5)) begin
+                cmp4 <= numout4;
+            end else begin
+                cmp4 <= numout5;
+            end
+//          2----------------------------------
+            if($signed(cmp0) >= $signed(cmp4)) begin
+                cmp5 <= cmp0;
+            end else begin
+                cmp5 <= cmp4;
+            end
+            if($signed(cmp1) >= $signed(cmp3)) begin
+                cmp6 <= cmp1;
+            end else begin
+                cmp6 <= cmp3;
+            end
+//          2----------------------------------
+            if($signed(cmp5) >= $signed(cmp6)) begin
+                cmp7 <= cmp5;
+            end else begin
+                cmp7 <= cmp6;
+            end
+//          3----------------------------------
+            if($signed(cmp7) >= $signed(cmp2)) begin
+                cmp8 <= cmp7;
+            end else begin
+                cmp8 <= cmp2;
+            end
+//          4----------------------------------
+            if(cmp8 == numout0)begin
+                res = 0;
+            end
+            else if(cmp8 == numout1)begin
+                res = 1;
+            end
+            else if(cmp8 == numout2)begin
+                res = 2;
+            end
+            else if(cmp8 == numout3)begin
+                res = 3;
+            end
+            else if(cmp8 == numout4)begin
+                res = 4;
+            end
+            else if(cmp8 == numout5)begin
+                res = 5;
+            end
+            else if(cmp8 == numout6)begin
+                res = 6;
+            end
+            else if(cmp8 == numout7)begin
+                res = 7;
+            end
+            else if(cmp8 == numout8)begin
+                res = 8;
+            end
+            else if(cmp8 == numout9)begin
+                res = 9;
+            end
+//          5----------------------------------
+        end
 
             
-            endcase
-            end
         endcase
     end
 

@@ -15,10 +15,12 @@
 #                         out"+str(i)+" <= (registers"+str(i)+"6>>>5) + 1;\n\
 #                     end")
 
-for i in range(5):
-    for j in range(5):
-        print(\
-"    reg signed [19:0] plusi"+str(i)+str(j)+";")
+"+str(i)+"
+for i in range(9):
+    # for j in range(5):
+        print("\
+    reg signed [24:0] cmp"+str(i)+";   \
+")
 
 
 # for k in range(5):
