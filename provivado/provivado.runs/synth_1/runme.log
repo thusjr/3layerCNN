@@ -1,0 +1,563 @@
+
+*** Running vivado
+    with args -log main.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
+
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source main.tcl -notrace
+Command: synth_design -top main -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 1144 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1132.707 ; gain = 233.977
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'main' [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:4]
+INFO: [Synth 8-6157] synthesizing module 'FCROM' [D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.runs/synth_1/.Xil/Vivado-19952-LAPTOP-PD9C7IFG/realtime/FCROM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'FCROM' (1#1) [D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.runs/synth_1/.Xil/Vivado-19952-LAPTOP-PD9C7IFG/realtime/FCROM_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'IFRAM' [D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.runs/synth_1/.Xil/Vivado-19952-LAPTOP-PD9C7IFG/realtime/IFRAM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'IFRAM' (2#1) [D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.runs/synth_1/.Xil/Vivado-19952-LAPTOP-PD9C7IFG/realtime/IFRAM_stub.v:6]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:321]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:484]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:602]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:234]
+WARNING: [Synth 8-6014] Unused sequential element kernelNumber_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:240]
+WARNING: [Synth 8-6014] Unused sequential element kernelNumber1_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:243]
+WARNING: [Synth 8-6014] Unused sequential element kernelNumber2_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:244]
+WARNING: [Synth 8-6014] Unused sequential element kernelNumber3_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:245]
+WARNING: [Synth 8-6014] Unused sequential element kernelNumber4_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:246]
+WARNING: [Synth 8-6014] Unused sequential element kernelNumber5_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:247]
+WARNING: [Synth 8-6014] Unused sequential element startfc1_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:252]
+WARNING: [Synth 8-6014] Unused sequential element startfc2_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:253]
+WARNING: [Synth 8-6014] Unused sequential element startfc3_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:254]
+WARNING: [Synth 8-6014] Unused sequential element startfc4_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:255]
+WARNING: [Synth 8-6014] Unused sequential element ifmap_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element Multiplier00_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:294]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier01_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:295]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier02_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:296]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier03_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:297]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier04_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:298]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier10_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:299]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier11_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:300]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier12_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:301]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier13_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:302]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier14_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:303]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier20_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:304]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier21_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:305]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier22_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:306]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier23_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:307]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier24_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:308]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier30_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:309]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier31_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:310]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier32_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:311]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier33_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:312]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier34_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:313]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier40_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:314]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier41_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:315]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier42_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:316]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier43_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:317]
+WARNING: [Synth 8-6014] Unused sequential element Multiplier44_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:318]
+WARNING: [Synth 8-6014] Unused sequential element multi00_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:323]
+WARNING: [Synth 8-6014] Unused sequential element multi01_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:324]
+WARNING: [Synth 8-6014] Unused sequential element multi02_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:325]
+WARNING: [Synth 8-6014] Unused sequential element multi03_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:326]
+WARNING: [Synth 8-6014] Unused sequential element multi04_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:327]
+WARNING: [Synth 8-6014] Unused sequential element multi10_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:328]
+WARNING: [Synth 8-6014] Unused sequential element multi11_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:329]
+WARNING: [Synth 8-6014] Unused sequential element multi12_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:330]
+WARNING: [Synth 8-6014] Unused sequential element multi13_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:331]
+WARNING: [Synth 8-6014] Unused sequential element multi14_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:332]
+WARNING: [Synth 8-6014] Unused sequential element multi20_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:333]
+WARNING: [Synth 8-6014] Unused sequential element multi21_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:334]
+WARNING: [Synth 8-6014] Unused sequential element multi22_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:335]
+WARNING: [Synth 8-6014] Unused sequential element multi23_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:336]
+WARNING: [Synth 8-6014] Unused sequential element multi24_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:337]
+WARNING: [Synth 8-6014] Unused sequential element multi30_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:338]
+WARNING: [Synth 8-6014] Unused sequential element multi31_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:339]
+WARNING: [Synth 8-6014] Unused sequential element multi32_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:340]
+WARNING: [Synth 8-6014] Unused sequential element multi33_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:341]
+WARNING: [Synth 8-6014] Unused sequential element multi34_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:342]
+WARNING: [Synth 8-6014] Unused sequential element multi40_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:343]
+WARNING: [Synth 8-6014] Unused sequential element multi41_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:344]
+WARNING: [Synth 8-6014] Unused sequential element multi42_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:345]
+WARNING: [Synth 8-6014] Unused sequential element multi43_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:346]
+WARNING: [Synth 8-6014] Unused sequential element multi44_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:347]
+WARNING: [Synth 8-6014] Unused sequential element plusi00_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:460]
+WARNING: [Synth 8-6014] Unused sequential element plusi01_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:461]
+WARNING: [Synth 8-6014] Unused sequential element plusi02_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:462]
+WARNING: [Synth 8-6014] Unused sequential element plusi03_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:463]
+WARNING: [Synth 8-6014] Unused sequential element plusi04_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:464]
+WARNING: [Synth 8-6014] Unused sequential element plusi10_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:465]
+WARNING: [Synth 8-6014] Unused sequential element plusi11_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:466]
+WARNING: [Synth 8-6014] Unused sequential element plusi12_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:467]
+WARNING: [Synth 8-6014] Unused sequential element plusi13_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:468]
+WARNING: [Synth 8-6014] Unused sequential element plusi14_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:469]
+WARNING: [Synth 8-6014] Unused sequential element plusi20_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:470]
+WARNING: [Synth 8-6014] Unused sequential element plusi21_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:471]
+WARNING: [Synth 8-6014] Unused sequential element plusi22_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:474]
+WARNING: [Synth 8-6014] Unused sequential element plusi23_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:475]
+WARNING: [Synth 8-6014] Unused sequential element plusi24_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:476]
+WARNING: [Synth 8-6014] Unused sequential element plusi31_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:477]
+WARNING: [Synth 8-6014] Unused sequential element plusi32_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:481]
+WARNING: [Synth 8-6014] Unused sequential element plusi33_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:482]
+WARNING: [Synth 8-6014] Unused sequential element conv_o0_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:485]
+WARNING: [Synth 8-6014] Unused sequential element conv_o1_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:491]
+WARNING: [Synth 8-6014] Unused sequential element conv_o2_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:492]
+WARNING: [Synth 8-6014] Unused sequential element conv_o3_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:493]
+WARNING: [Synth 8-6014] Unused sequential element pool0_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:504]
+WARNING: [Synth 8-6014] Unused sequential element pool1_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:510]
+WARNING: [Synth 8-6014] Unused sequential element pool_o_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:527]
+WARNING: [Synth 8-6014] Unused sequential element quantic_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:545]
+WARNING: [Synth 8-6014] Unused sequential element FCweight0_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:551]
+WARNING: [Synth 8-6014] Unused sequential element FCweight1_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:552]
+WARNING: [Synth 8-6014] Unused sequential element FCweight2_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:553]
+WARNING: [Synth 8-6014] Unused sequential element FCweight3_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:554]
+WARNING: [Synth 8-6014] Unused sequential element FCweight4_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:555]
+WARNING: [Synth 8-6014] Unused sequential element FCweight5_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:556]
+WARNING: [Synth 8-6014] Unused sequential element FCweight6_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:557]
+WARNING: [Synth 8-6014] Unused sequential element FCweight7_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:558]
+WARNING: [Synth 8-6014] Unused sequential element FCweight8_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:559]
+WARNING: [Synth 8-6014] Unused sequential element FCout0_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:574]
+WARNING: [Synth 8-6014] Unused sequential element FCout1_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:575]
+WARNING: [Synth 8-6014] Unused sequential element FCout2_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:576]
+WARNING: [Synth 8-6014] Unused sequential element FCout3_reg was removed.  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:577]
+INFO: [Common 17-14] Message 'Synth 8-6014' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-5788] Register addrimp_reg in module main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:236]
+WARNING: [Synth 8-5788] Register finalstate_reg in module main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:237]
+WARNING: [Synth 8-5788] Register done_reg in module main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:238]
+WARNING: [Synth 8-5788] Register addr_IFRAM_reg in module main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:222]
+WARNING: [Synth 8-5788] Register counter_reg in module main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:241]
+WARNING: [Synth 8-5788] Register impcounter_reg in module main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:242]
+WARNING: [Synth 8-5788] Register wren_IFRAM_reg in module main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:224]
+WARNING: [Synth 8-5788] Register startpool_reg in module main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:495]
+WARNING: [Synth 8-5788] Register addr_FCROM_reg in module main is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:210]
+WARNING: [Synth 8-3848] Net data_IFRAM in module/entity main does not have driver. [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:216]
+INFO: [Synth 8-6155] done synthesizing module 'main' (3#1) [D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v:4]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1208.340 ; gain = 309.609
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1208.340 ; gain = 309.609
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1208.340 ; gain = 309.609
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1208.340 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/FCROM/FCROM/FCROM_in_context.xdc] for cell 'MYFCROM'
+Finished Parsing XDC File [d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/FCROM/FCROM/FCROM_in_context.xdc] for cell 'MYFCROM'
+Parsing XDC File [d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM/IFRAM_in_context.xdc] for cell 'MYIFRAM'
+Finished Parsing XDC File [d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM/IFRAM_in_context.xdc] for cell 'MYIFRAM'
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1308.211 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1308.211 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1308.211 ; gain = 409.480
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1308.211 ; gain = 409.480
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for MYFCROM. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for MYIFRAM. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1308.211 ; gain = 409.480
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'State_reg' in module 'main'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                               00 |                            01110
+                 iSTATE0 |                               01 |                            00000
+                 iSTATE1 |                               10 |                            00111
+                 iSTATE2 |                               11 |                            01100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'State_reg' using encoding 'sequential' in module 'main'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1308.211 ; gain = 409.480
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 4     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     11 Bit        Muxes := 4     
+	   4 Input     11 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 2     
+	   4 Input     10 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   4 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 10    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module main 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 4     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     11 Bit        Muxes := 4     
+	   4 Input     11 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 2     
+	   4 Input     10 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   4 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 10    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\counter_reg[10]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\counter_reg[9]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\counter_reg[8]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\counter_reg[7]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\counter_reg[6]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\counter_reg[5]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\counter_reg[4]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\counter_reg[3]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\counter_reg[0]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\counter_reg[1]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\counter_reg[2]_LDC )
+WARNING: [Synth 8-3332] Sequential element (counter_reg[10]_LDC) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (counter_reg[10]_C) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (counter_reg[9]_LDC) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (counter_reg[9]_C) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (counter_reg[8]_LDC) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (counter_reg[8]_C) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (counter_reg[7]_LDC) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (counter_reg[7]_C) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (counter_reg[6]_LDC) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (counter_reg[6]_C) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (counter_reg[5]_LDC) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (counter_reg[5]_C) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (counter_reg[4]_LDC) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (counter_reg[4]_C) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (counter_reg[3]_LDC) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (counter_reg[3]_C) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (counter_reg[2]_LDC) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (counter_reg[2]_C) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (counter_reg[1]_LDC) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (counter_reg[1]_C) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (counter_reg[0]_LDC) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (counter_reg[0]_C) is unused and will be removed from module main.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1308.211 ; gain = 409.480
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1308.211 ; gain = 409.480
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1308.211 ; gain = 409.480
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1308.211 ; gain = 409.480
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[63]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[62]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[61]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[60]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[59]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[58]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[57]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[56]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[55]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[54]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[53]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[52]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[51]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[50]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[49]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[48]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[47]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[46]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[45]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[44]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[43]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[42]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[41]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[40]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[39]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[38]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[37]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[36]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[35]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[34]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[33]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[32]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[31]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[30]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[29]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[28]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[27]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[26]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[25]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[24]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[23]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[22]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[21]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[20]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[19]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[18]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[17]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[16]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[15]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[14]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[13]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[12]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[11]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[10]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[9]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[8]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[7]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[6]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[5]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[4]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[3]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[2]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[1]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module MYIFRAM has unconnected pin dina[0]
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1312.988 ; gain = 414.258
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1312.988 ; gain = 414.258
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1312.988 ; gain = 414.258
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1312.988 ; gain = 414.258
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1312.988 ; gain = 414.258
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1312.988 ; gain = 414.258
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |FCROM         |         1|
+|2     |IFRAM         |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |FCROM |     1|
+|2     |IFRAM |     1|
+|3     |BUFG  |     1|
+|4     |LUT1  |     3|
+|5     |LUT2  |    10|
+|6     |LUT3  |    11|
+|7     |LUT4  |    21|
+|8     |LUT5  |    17|
+|9     |LUT6  |    42|
+|10    |FDCE  |     2|
+|11    |FDRE  |    50|
+|12    |IBUF  |     3|
+|13    |OBUF  |     1|
++------+------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   333|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1312.988 ; gain = 414.258
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 64 critical warnings and 22 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:35 . Memory (MB): peak = 1312.988 ; gain = 314.387
+Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1312.988 ; gain = 414.258
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1324.055 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1342.016 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+33 Infos, 132 Warnings, 64 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 1342.016 ; gain = 885.719
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1342.016 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.runs/synth_1/main.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Jan  7 17:41:44 2021...

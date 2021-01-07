@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Thu Jan  7 17:33:19 2021
+# Process ID: 21164
+# Current directory: D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.runs/IFRAM_synth_1
+# Command line: vivado.exe -log IFRAM.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source IFRAM.tcl
+# Log file: D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.runs/IFRAM_synth_1/IFRAM.vds
+# Journal file: D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.runs/IFRAM_synth_1\vivado.jou
+#-----------------------------------------------------------
+source IFRAM.tcl -notrace

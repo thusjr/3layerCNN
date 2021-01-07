@@ -180,13 +180,35 @@ reg [2:0] finalstate;
     reg startfc4;
 //--
 
-//ramrom----------------------------
+////ramrom QUARTUS VERSION----------------------------
+//    reg  [9:0]   addr_FCROM;
+//    wire [107:0]    q_FCROM;
+//    FCROM MYFCROM(
+//        .clock(clk),
+//        .address(addr_FCROM),
+//        .q(q_FCROM)
+//    );
+
+//    reg  [6:0]     addr_IFRAM;
+//    wire [63:0]    q_IFRAM;
+//    reg  [63:0]    data_IFRAM;
+//    reg            wren_IFRAM;
+
+//    IFRAM MYIFRAM(
+//        .clock(clk),
+//        .data(data_IFRAM),
+//        .address(addr_IFRAM),
+//        .q(q_IFRAM),
+//        .wren(wren_IFRAM)
+//    );
+////--
+//ramrom VIVADO VERSION----------------------------
     reg  [9:0]   addr_FCROM;
     wire [107:0]    q_FCROM;
     FCROM MYFCROM(
-        .clock(clk),
-        .address(addr_FCROM),
-        .q(q_FCROM)
+        .clka(clk),
+        .addra(addr_FCROM),
+        .douta(q_FCROM)
     );
 
     reg  [6:0]     addr_IFRAM;
@@ -195,31 +217,19 @@ reg [2:0] finalstate;
     reg            wren_IFRAM;
 
     IFRAM MYIFRAM(
-        .clock(clk),
-        .data(data_IFRAM),
-        .address(addr_IFRAM),
-        .q(q_IFRAM),
-        .wren(wren_IFRAM)
+        .clka(clk),
+        .dina(data_IFRAM),
+        .addra(addr_IFRAM),
+        .douta(q_IFRAM),
+        .wea(wren_IFRAM)
     );
 //--
 
-
-//controller
-always @(posedge clk or negedge rst) begin
-    if( rst == 0 ) begin
-        State <= Idle;
-        addrimp <= 0;
-    end else begin
-
-    end
-end
-
-
 //PE
-reg   [StateLength]         State;
+reg   [`StateLength]         State;
 always @(posedge clk or negedge rst) begin
     if( rst == 0 ) begin
-        State <= Idle;
+        State <= `Idle;
     end else begin
         case(State) 
             `Idle: begin
@@ -251,15 +261,14 @@ always @(posedge clk or negedge rst) begin
                 end else 
                 addrimp <= addrimp + 7;
                 addr_IFRAM <= addr_IFRAM + 1;
-                ifmap [addrimp + 0] <=  q_IFRAM[0:7];
-                ifmap [addrimp + 1] <=  q_IFRAM[8:15];
-                ifmap [addrimp + 2] <=  q_IFRAM[16:23];
-                ifmap [addrimp + 3] <=  q_IFRAM[24:31];
-                ifmap [addrimp + 4] <=  q_IFRAM[32:39];
-                ifmap [addrimp + 5] <=  q_IFRAM[40:47];
-                ifmap [addrimp + 6] <=  q_IFRAM[48:55];
-                ifmap [addrimp + 7] <=  q_IFRAM[56:63];
-                ifmap [addrimp + 8] <=  q_IFRAM[64:71];
+                ifmap [addrimp + 0] <= q_IFRAM[7:0];
+                ifmap [addrimp + 1] <= q_IFRAM[15:8];
+                ifmap [addrimp + 2] <= q_IFRAM[23:16];
+                ifmap [addrimp + 3] <= q_IFRAM[31:24];
+                ifmap [addrimp + 4] <= q_IFRAM[39:32];
+                ifmap [addrimp + 5] <= q_IFRAM[47:40];
+                ifmap [addrimp + 6] <= q_IFRAM[55:48];
+
             end
             `Calcu: begin
 //          all---------------------------------
@@ -473,11 +482,11 @@ always @(posedge clk or negedge rst) begin
             plusi33 <= plusi24 + plusi31;
 //          6 7 8 9-----------------------------
             case(kernelNumber5) 
-                0:conv_o0 <= plusi32 + plusi33 + kern0bias;
-                1:conv_o0 <= plusi32 + plusi33 + kern1bias;
-                2:conv_o0 <= plusi32 + plusi33 + kern2bias;
-                3:conv_o0 <= plusi32 + plusi33 + kern3bias;
-                4:conv_o0 <= plusi32 + plusi33 + kern4bias;
+                0:conv_o0 <= plusi32 + plusi33 + `kern0bias;
+                1:conv_o0 <= plusi32 + plusi33 + `kern1bias;
+                2:conv_o0 <= plusi32 + plusi33 + `kern2bias;
+                3:conv_o0 <= plusi32 + plusi33 + `kern3bias;
+                4:conv_o0 <= plusi32 + plusi33 + `kern4bias;
             endcase 
             conv_o1 <= conv_o0;
             conv_o2 <= conv_o1;
@@ -522,13 +531,13 @@ always @(posedge clk or negedge rst) begin
             end 
 //          12 quantic--------------------------
             /*************
-             量化处理。
-            输入是0~255的9bit，weight是5bit量化
-            最后得到21bit
+             量化处理�???
+            输入�???0~255�???9bit，weight�???5bit量化
+            �???后得�???21bit
             要压缩到8bit
-            1+6+1吧 也就是说，右移4位
-            最大01111111_1111
-            最小10000000_0000
+            1+6+1�??? 也就是说，右�???4�???
+            �???�???01111111_1111
+            �???�???10000000_0000
             *************/
             startfc3 <= startfc2;
             if(startfc2 == 1) begin
@@ -550,11 +559,11 @@ always @(posedge clk or negedge rst) begin
                 FCweight8 <= q_FCROM[71:64];
             end 
 //          13----------------------------------
-            //FC 需要载入数据
+            //FC �???要载入数�???
             /*************
             数据规模
             8*8 = 15 输入
-            输出需要720个数字相加（numberout1~10）
+            输出�???�???720个数字相加（numberout1~10�???
             2 4 8 16 32 64 128 256 512 1024
             1 2 3 4 5   6  7   8   9   10
             扩大十位就可以了
@@ -687,8 +696,8 @@ always @(posedge clk or negedge rst) begin
                 else if(cmp8 == numout9)begin
                     res = 9;
                 end
-            endcase
-//          5----------------------------------
+                end
+        endcase
         end
         endcase
     end
