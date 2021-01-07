@@ -57,7 +57,7 @@
 FCROM your_instance_name (
   .clka(clka),    // input wire clka
   .addra(addra),  // input wire [9 : 0] addra
-  .douta(douta)  // output wire [107 : 0] douta
+  .douta(douta)  // output wire [127 : 0] douta
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

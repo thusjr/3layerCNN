@@ -18,11 +18,18 @@ main mymain(
 initial begin
     clk =1;
     rst = 0;
-    #100000
+    startflag = 0;
+    #100
     rst = 1;
+    #100
+    startflag = 1;
 end
-always #5000 clk <= ~clk;
-
+always #5 clk <= ~clk;
+always @ * begin
+    if (done) begin
+        startflag = 0;
+    end
+end
 
 endmodule
 

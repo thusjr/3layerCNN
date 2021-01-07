@@ -1,0 +1,8 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/sim/IFRAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IFRAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/FCROM/sim/FCROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FCROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module main
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/GradeFour/FPGA-1/project/3layerCNN/srcs/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench

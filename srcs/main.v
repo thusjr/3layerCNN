@@ -76,6 +76,7 @@ reg [2:0] finalstate;
 //input photo 28*28----------------
     reg signed [7:0] ifmap [783:0];
     reg        [9:0] addrimp; //max=11_0000_1111=783
+    reg        [1:0] fourswitch;
 //--
 
 //kernelNumber---------------------
@@ -102,7 +103,7 @@ reg [2:0] finalstate;
     reg signed [20:0] plusi22;
     reg signed [20:0] plusi23;
     reg signed [20:0] plusi24;
-    reg signed [20:0] plusi30;
+    // reg signed [20:0] plusi30;
     reg signed [20:0] plusi31;
     reg signed [20:0] plusi32;
     reg signed [20:0] plusi33;
@@ -204,7 +205,7 @@ reg [2:0] finalstate;
 ////--
 //ramrom VIVADO VERSION----------------------------
     reg  [9:0]   addr_FCROM;
-    wire [107:0]    q_FCROM;
+    wire [127:0]    q_FCROM;
     FCROM MYFCROM(
         .clka(clk),
         .addra(addr_FCROM),
@@ -233,6 +234,115 @@ always @(posedge clk or negedge rst) begin
     end else begin
         case(State) 
             `Idle: begin
+                fourswitch <= 0;
+                quantic <= 0;
+                pool_o<=0;
+                pool1<=0;
+                pool0<=0;
+                conv_o0<=0;
+                conv_o1<=0;
+                conv_o2<=0;
+                conv_o3<=0;
+                FCout0 <= 0;
+                FCweight0 <= 0;
+                FCout1 <= 0;
+                FCweight1 <= 0;
+                FCout2 <= 0;
+                FCweight2 <= 0;
+                FCout3 <= 0;
+                FCweight3 <= 0;
+                FCout4 <= 0;
+                FCweight4 <= 0;
+                FCout5 <= 0;
+                FCweight5 <= 0;
+                FCout6 <= 0;
+                FCweight6 <= 0;
+                FCout7 <= 0;
+                FCweight7 <= 0;
+                FCout8 <= 0;
+                FCweight8 <= 0;
+                FCout9 <= 0;
+                FCweight9 <= 0;
+                plusi00 <= 0;
+                plusi01 <= 0;
+                plusi02 <= 0;
+                plusi03 <= 0;
+                plusi04 <= 0;
+                plusi10 <= 0;
+                plusi11 <= 0;
+                plusi12 <= 0;
+                plusi13 <= 0;
+                plusi14 <= 0;
+                plusi20 <= 0;
+                plusi21 <= 0;
+                plusi22 <= 0;
+                plusi23 <= 0;
+                plusi24 <= 0;
+                // plusi30 <= 0;
+                plusi31 <= 0;
+                plusi32 <= 0;
+                plusi33 <= 0;
+                // plusi34 <= 0;
+                multi00 <= 0;
+                multi01 <= 0;
+                multi02 <= 0;
+                multi03 <= 0;
+                multi04 <= 0;
+                multi10 <= 0;
+                multi11 <= 0;
+                multi12 <= 0;
+                multi13 <= 0;
+                multi14 <= 0;
+                multi20 <= 0;
+                multi21 <= 0;
+                multi22 <= 0;
+                multi23 <= 0;
+                multi24 <= 0;
+                multi30 <= 0;
+                multi31 <= 0;
+                multi32 <= 0;
+                multi33 <= 0;
+                multi34 <= 0;
+                multi40 <= 0;
+                multi41 <= 0;
+                multi42 <= 0;
+                multi43 <= 0;
+                multi44 <= 0;
+                Multiplier00 <= 0;
+                Multiplier01 <= 0;
+                Multiplier02 <= 0;
+                Multiplier03 <= 0;
+                Multiplier04 <= 0;
+                Multiplier10 <= 0;
+                Multiplier11 <= 0;
+                Multiplier12 <= 0;
+                Multiplier13 <= 0;
+                Multiplier14 <= 0;
+                Multiplier20 <= 0;
+                Multiplier21 <= 0;
+                Multiplier22 <= 0;
+                Multiplier23 <= 0;
+                Multiplier24 <= 0;
+                Multiplier30 <= 0;
+                Multiplier31 <= 0;
+                Multiplier32 <= 0;
+                Multiplier33 <= 0;
+                Multiplier34 <= 0;
+                Multiplier40 <= 0;
+                Multiplier41 <= 0;
+                Multiplier42 <= 0;
+                Multiplier43 <= 0;
+                Multiplier44 <= 0;
+                numout0 <= 0;
+                numout1 <= 0;
+                numout2 <= 0;
+                numout3 <= 0;
+                numout4 <= 0;
+                numout5 <= 0;
+                numout6 <= 0;
+                numout7 <= 0;
+                numout8 <= 0;
+                numout9 <= 0;
                 addrimp <= 0;
                 finalstate <= 1;
                 done <= 0;
@@ -245,6 +355,8 @@ always @(posedge clk or negedge rst) begin
                 kernelNumber3 <= 1;
                 kernelNumber4 <= 1;
                 kernelNumber5 <= 1;
+                res <= 4'bzzzz;
+                addr_FCROM <= 0;
                 if(startFlag) begin
                     addr_IFRAM <= addr_IFRAM + 1;
                     State <= `Init;
@@ -256,26 +368,25 @@ always @(posedge clk or negedge rst) begin
             end
             `Init: begin
                 wren_IFRAM <= 0; //禁止其他地方写入数据
-                if(addrimp == 776) begin
+                if(addrimp == 777) begin
                     State <= `Calcu;
-                end else 
-                addrimp <= addrimp + 7;
+                    addrimp <= 0;
+                end else begin
+                    addrimp <= addrimp + 7;
+                end
                 addr_IFRAM <= addr_IFRAM + 1;
-                ifmap [addrimp + 0] <= q_IFRAM[7:0];
-                ifmap [addrimp + 1] <= q_IFRAM[15:8];
-                ifmap [addrimp + 2] <= q_IFRAM[23:16];
-                ifmap [addrimp + 3] <= q_IFRAM[31:24];
-                ifmap [addrimp + 4] <= q_IFRAM[39:32];
-                ifmap [addrimp + 5] <= q_IFRAM[47:40];
-                ifmap [addrimp + 6] <= q_IFRAM[55:48];
-
+                ifmap [addrimp + 0] <= q_IFRAM[63:56];
+                ifmap [addrimp + 1] <= q_IFRAM[55:48];
+                ifmap [addrimp + 2] <= q_IFRAM[47:40];
+                ifmap [addrimp + 3] <= q_IFRAM[39:32];
+                ifmap [addrimp + 4] <= q_IFRAM[31:24];
+                ifmap [addrimp + 5] <= q_IFRAM[23:16];
+                ifmap [addrimp + 6] <= q_IFRAM[15:8];
             end
             `Calcu: begin
 //          all---------------------------------
             counter  = counter + 1;
-            addrimp <= addrimp + 1;
-            addrimp <= addrimp + 27;
-            addrimp <= addrimp + 1;            
+          
             if(impcounter == 47) begin
                 impcounter <= 0;
                 if(addrimp != 667) begin
@@ -285,9 +396,15 @@ always @(posedge clk or negedge rst) begin
                     kernelNumber = kernelNumber + 1 ; 
                 end
             end else begin
-                addrimp <= addrimp - 27;
+                case (fourswitch)
+                    0:addrimp <= addrimp + 1;
+                    1:addrimp <= addrimp + 27;
+                    2:addrimp <= addrimp + 1;  
+                    3:addrimp <= addrimp - 27;
+                endcase
                 impcounter <= impcounter + 1;
             end
+            fourswitch <= fourswitch + 1;
 
 //          1-----------------------------------
             kernelNumber1 <= kernelNumber; 
@@ -548,15 +665,16 @@ always @(posedge clk or negedge rst) begin
                 end else begin
                     quantic <= pool_o>>>4;
                 end 
-                FCweight0 <= q_FCROM[7:0];
-                FCweight1 <= q_FCROM[15:8];
-                FCweight2 <= q_FCROM[23:16];
-                FCweight3 <= q_FCROM[31:24];
-                FCweight4 <= q_FCROM[39:32];
-                FCweight5 <= q_FCROM[47:40];
-                FCweight6 <= q_FCROM[55:48];
-                FCweight7 <= q_FCROM[63:56];
-                FCweight8 <= q_FCROM[71:64];
+                FCweight0 <= q_FCROM[127:120];
+                FCweight1 <= q_FCROM[119:112];
+                FCweight2 <= q_FCROM[111:104];
+                FCweight3 <= q_FCROM[103:96];
+                FCweight4 <= q_FCROM[95:88];
+                FCweight5 <= q_FCROM[87:80];
+                FCweight6 <= q_FCROM[79:72];
+                FCweight7 <= q_FCROM[71:64];
+                FCweight8 <= q_FCROM[63:56];
+                FCweight9 <= q_FCROM[55:48];
             end 
 //          13----------------------------------
             //FC �???要载入数�???
@@ -675,39 +793,38 @@ always @(posedge clk or negedge rst) begin
             end
     //          5----------------------------------
             5: begin
-                finalstate <= 1;
+                finalstate <= 0;
                 State <= `Idle;
                 done <= 1;
                 if(cmp8 == numout0)begin
-                    res = 0;
-                    
+                    res <= 0;                    
                 end
                 else if(cmp8 == numout1)begin
-                    res = 1;
+                    res <= 1;
                 end
                 else if(cmp8 == numout2)begin
-                    res = 2;
+                    res <= 2;
                 end
                 else if(cmp8 == numout3)begin
-                    res = 3;
+                    res <= 3;
                 end
                 else if(cmp8 == numout4)begin
-                    res = 4;
+                    res <= 4;
                 end
                 else if(cmp8 == numout5)begin
-                    res = 5;
+                    res <= 5;
                 end
                 else if(cmp8 == numout6)begin
-                    res = 6;
+                    res <= 6;
                 end
                 else if(cmp8 == numout7)begin
-                    res = 7;
+                    res <= 7;
                 end
                 else if(cmp8 == numout8)begin
-                    res = 8;
+                    res <= 8;
                 end
                 else if(cmp8 == numout9)begin
-                    res = 9;
+                    res <= 9;
                 end
                 end
         endcase

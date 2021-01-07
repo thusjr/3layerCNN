@@ -30,14 +30,16 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
+add_files D:/GradeFour/FPGA-1/project/3layerCNN/data/final3.coe
+add_files D:/GradeFour/FPGA-1/project/3layerCNN/data/7.coe
 read_verilog -library xil_defaultlib {
   D:/GradeFour/FPGA-1/project/3layerCNN/srcs/defines.v
   D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v
 }
-read_ip -quiet d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/FCROM/FCROM.xci
+read_ip -quiet D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/FCROM/FCROM.xci
 set_property used_in_implementation false [get_files -all d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/FCROM/FCROM_ooc.xdc]
 
-read_ip -quiet d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM.xci
+read_ip -quiet D:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM.xci
 set_property used_in_implementation false [get_files -all d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.srcs/sources_1/ip/IFRAM/IFRAM_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being

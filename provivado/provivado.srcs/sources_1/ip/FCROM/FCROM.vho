@@ -56,7 +56,7 @@ COMPONENT FCROM
   PORT (
     clka : IN STD_LOGIC;
     addra : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(107 DOWNTO 0)
+    douta : OUT STD_LOGIC_VECTOR(127 DOWNTO 0)
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------

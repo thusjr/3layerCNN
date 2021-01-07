@@ -1,8 +1,8 @@
 `define StateLength   4:0
-`define Idle       5'b01110
-`define Init       5'b00000
-`define Calcu      5'b00111
-`define Stop       5'b01100
+`define Idle       5'b00000
+`define Init       5'b00001
+`define Calcu      5'b00010
+`define Stop       5'b00011
 
 `define kern0multi00 8'b11100111
 `define kern0multi01 8'b00001011

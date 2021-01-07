@@ -38,7 +38,7 @@ module FCROM (
 
 	input	[9:0]  address;
 	input	  clock;
-	output	[107:0]  q;
+	output	[127:0]  q;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_off
 `endif
@@ -57,7 +57,7 @@ endmodule
 // Retrieval info: PRIVATE: AclrByte NUMERIC "0"
 // Retrieval info: PRIVATE: AclrOutput NUMERIC "0"
 // Retrieval info: PRIVATE: BYTE_ENABLE NUMERIC "0"
-// Retrieval info: PRIVATE: BYTE_SIZE NUMERIC "9"
+// Retrieval info: PRIVATE: BYTE_SIZE NUMERIC "8"
 // Retrieval info: PRIVATE: BlankMemory NUMERIC "0"
 // Retrieval info: PRIVATE: CLOCK_ENABLE_INPUT_A NUMERIC "0"
 // Retrieval info: PRIVATE: CLOCK_ENABLE_OUTPUT_A NUMERIC "0"
@@ -78,7 +78,7 @@ endmodule
 // Retrieval info: PRIVATE: SingleClock NUMERIC "1"
 // Retrieval info: PRIVATE: UseDQRAM NUMERIC "0"
 // Retrieval info: PRIVATE: WidthAddr NUMERIC "10"
-// Retrieval info: PRIVATE: WidthData NUMERIC "108"
+// Retrieval info: PRIVATE: WidthData NUMERIC "128"
 // Retrieval info: PRIVATE: rden NUMERIC "0"
 // Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 // Retrieval info: CONSTANT: ADDRESS_ACLR_A STRING "NONE"
@@ -93,14 +93,14 @@ endmodule
 // Retrieval info: CONSTANT: OUTDATA_ACLR_A STRING "NONE"
 // Retrieval info: CONSTANT: OUTDATA_REG_A STRING "CLOCK0"
 // Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "10"
-// Retrieval info: CONSTANT: WIDTH_A NUMERIC "108"
+// Retrieval info: CONSTANT: WIDTH_A NUMERIC "128"
 // Retrieval info: CONSTANT: WIDTH_BYTEENA_A NUMERIC "1"
 // Retrieval info: USED_PORT: address 0 0 10 0 INPUT NODEFVAL "address[9..0]"
 // Retrieval info: USED_PORT: clock 0 0 0 0 INPUT VCC "clock"
-// Retrieval info: USED_PORT: q 0 0 108 0 OUTPUT NODEFVAL "q[107..0]"
+// Retrieval info: USED_PORT: q 0 0 128 0 OUTPUT NODEFVAL "q[127..0]"
 // Retrieval info: CONNECT: @address_a 0 0 10 0 address 0 0 10 0
 // Retrieval info: CONNECT: @clock0 0 0 0 0 clock 0 0 0 0
-// Retrieval info: CONNECT: q 0 0 108 0 @q_a 0 0 108 0
+// Retrieval info: CONNECT: q 0 0 128 0 @q_a 0 0 128 0
 // Retrieval info: GEN_FILE: TYPE_NORMAL FCROM.v TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL FCROM.inc FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL FCROM.cmp FALSE
