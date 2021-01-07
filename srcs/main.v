@@ -1,13 +1,13 @@
 
 `include "defines.v"
 
-module main();
+module main(clk,rst,startFlag,done);
 
 
 input                       clk;
 input                       rst;
 input                       startFlag;
-output reg  done;
+output reg                  done;
 /*************
 输入 9bit 8bit
 乘法 8+7+1 = 16bit
@@ -80,6 +80,11 @@ reg [2:0] finalstate;
 
 //kernelNumber---------------------
     reg        [2:0] kernelNumber; 
+    reg        [2:0] kernelNumber1; 
+    reg        [2:0] kernelNumber2; 
+    reg        [2:0] kernelNumber3; 
+    reg        [2:0] kernelNumber4; 
+    reg        [2:0] kernelNumber5; 
 //--
 //plusi----------------------------
     reg signed [20:0] plusi00;
@@ -173,14 +178,6 @@ reg [2:0] finalstate;
     reg startfc3;
     reg startfc4;
 //--
-//multi----------------------------
-//--
-//multi----------------------------
-//--
-
-
-
-
 
 //ramrom----------------------------
     reg  [9:0]   addr_FCROM;
@@ -231,6 +228,12 @@ always @(posedge clk or negedge rst) begin
                 finalstate <= 1;
                 done <= 0;
                 addr_IFRAM <= 0;
+                kernelNumber <= 1;
+                kernelNumber1 <= 1;
+                kernelNumber2 <= 1;
+                kernelNumber3 <= 1;
+                kernelNumber4 <= 1;
+                kernelNumber5 <= 1;
                 if(startFlag) begin
                     addr_IFRAM <= addr_IFRAM + 1;
                     State <= `Init;
@@ -412,8 +415,10 @@ always @(posedge clk or negedge rst) begin
                 addrimp <= addrimp + 5;
             end else begin
                 addrimp <= 0;
+                kernelNumber = kernelNumber + 1 ; 
             end
 //          1-----------------------------------
+            kernelNumber1 <= kernelNumber; 
             Multiplier00 <= ifmap[addrimp+0];
             Multiplier01 <= ifmap[addrimp+1];
             Multiplier02 <= ifmap[addrimp+2];
@@ -440,7 +445,8 @@ always @(posedge clk or negedge rst) begin
             Multiplier43 <= ifmap[addrimp+115];
             Multiplier44 <= ifmap[addrimp+116];
 //          2-----------------------------------
-            case(kernelNumber)
+            kernelNumber2 <= kernelNumber1;
+            case(kernelNumber1)
                 0:begin
                     multi00 <= Multiplier00 * `kern0multi00;
                     multi01 <= Multiplier01 * `kern0multi01;
@@ -578,6 +584,7 @@ always @(posedge clk or negedge rst) begin
                 end
             endcase
 //          3-----------------------------------
+            kernelNumber3 <= kernelNumber2;
             plusi00 <= multi00 + multi44;
             plusi01 <= multi01 + multi43;
             plusi02 <= multi02 + multi42;
@@ -591,15 +598,18 @@ always @(posedge clk or negedge rst) begin
             plusi20 <= multi20 + multi24;
             plusi21 <= multi21 + multi23;
 //          4-----------------------------------
+            kernelNumber4 <= kernelNumber3;
             plusi22 <= plusi00 + plusi01 + plusi02;
             plusi23 <= plusi03 + plusi04 + plusi10;
             plusi24 <= plusi11 + plusi12 + plusi13;
             plusi31 <= plusi14 + plusi20 + plusi21;
 //          5-----------------------------------
+            kernelNumber5 <= kernelNumber4;
+
             plusi32 <= plusi22 + plusi23 + multi22;
             plusi33 <= plusi24 + plusi31;
 //          6 7 8 9-----------------------------
-            case(kernelNumber) 
+            case(kernelNumber5) 
                 0:conv_o0 <= plusi32 + plusi33 + kern0bias;
                 1:conv_o0 <= plusi32 + plusi33 + kern1bias;
                 2:conv_o0 <= plusi32 + plusi33 + kern2bias;
@@ -819,9 +829,5 @@ always @(posedge clk or negedge rst) begin
         end
         endcase
     end
-
-
 end
-
-
 endmodule

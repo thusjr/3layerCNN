@@ -4,134 +4,135 @@
 `define Calcu      5'b00111
 `define Stop       5'b01100
 
-`define kern0multi00
-`define kern0multi01
-`define kern0multi02
-`define kern0multi03
-`define kern0multi04
-`define kern0multi10
-`define kern0multi11
-`define kern0multi12
-`define kern0multi13
-`define kern0multi14
-`define kern0multi20
-`define kern0multi21
-`define kern0multi22
-`define kern0multi23
-`define kern0multi24
-`define kern0multi30
-`define kern0multi31
-`define kern0multi32
-`define kern0multi33
-`define kern0multi34
-`define kern0multi40
-`define kern0multi41
-`define kern0multi42
-`define kern0multi43
-`define kern0multi44
-`define kern1multi00
-`define kern1multi01
-`define kern1multi02
-`define kern1multi03
-`define kern1multi04
-`define kern1multi10
-`define kern1multi11
-`define kern1multi12
-`define kern1multi13
-`define kern1multi14
-`define kern1multi20
-`define kern1multi21
-`define kern1multi22
-`define kern1multi23
-`define kern1multi24
-`define kern1multi30
-`define kern1multi31
-`define kern1multi32
-`define kern1multi33
-`define kern1multi34
-`define kern1multi40
-`define kern1multi41
-`define kern1multi42
-`define kern1multi43
-`define kern1multi44
-`define kern2multi00
-`define kern2multi01
-`define kern2multi02
-`define kern2multi03
-`define kern2multi04
-`define kern2multi10
-`define kern2multi11
-`define kern2multi12
-`define kern2multi13
-`define kern2multi14
-`define kern2multi20
-`define kern2multi21
-`define kern2multi22
-`define kern2multi23
-`define kern2multi24
-`define kern2multi30
-`define kern2multi31
-`define kern2multi32
-`define kern2multi33
-`define kern2multi34
-`define kern2multi40
-`define kern2multi41
-`define kern2multi42
-`define kern2multi43
-`define kern2multi44
-`define kern3multi00
-`define kern3multi01
-`define kern3multi02
-`define kern3multi03
-`define kern3multi04
-`define kern3multi10
-`define kern3multi11
-`define kern3multi12
-`define kern3multi13
-`define kern3multi14
-`define kern3multi20
-`define kern3multi21
-`define kern3multi22
-`define kern3multi23
-`define kern3multi24
-`define kern3multi30
-`define kern3multi31
-`define kern3multi32
-`define kern3multi33
-`define kern3multi34
-`define kern3multi40
-`define kern3multi41
-`define kern3multi42
-`define kern3multi43
-`define kern3multi44
-`define kern4multi00
-`define kern4multi01
-`define kern4multi02
-`define kern4multi03
-`define kern4multi04
-`define kern4multi10
-`define kern4multi11
-`define kern4multi12
-`define kern4multi13
-`define kern4multi14
-`define kern4multi20
-`define kern4multi21
-`define kern4multi22
-`define kern4multi23
-`define kern4multi24
-`define kern4multi30
-`define kern4multi31
-`define kern4multi32
-`define kern4multi33
-`define kern4multi34
-`define kern4multi40
-`define kern4multi41
-`define kern4multi42
-`define kern4multi43
-`define kern4multi44
+`define kern0multi00 8'b11100111
+`define kern0multi01 8'b00001011
+`define kern0multi02 8'b00001010
+`define kern0multi03 8'b11001100
+`define kern0multi04 8'b11111100
+`define kern0multi10 8'b00000101
+`define kern0multi11 8'b00001101
+`define kern0multi12 8'b11101001
+`define kern0multi13 8'b11001100
+`define kern0multi14 8'b00000110
+`define kern0multi20 8'b00001100
+`define kern0multi21 8'b00001001
+`define kern0multi22 8'b11110100
+`define kern0multi23 8'b11110011
+`define kern0multi24 8'b00000110
+`define kern0multi30 8'b00010010
+`define kern0multi31 8'b00001110
+`define kern0multi32 8'b00000010
+`define kern0multi33 8'b00010011
+`define kern0multi34 8'b11111010
+`define kern0multi40 8'b11111111
+`define kern0multi41 8'b00100101
+`define kern0multi42 8'b00000010
+`define kern0multi43 8'b00010111
+`define kern0multi44 8'b11111101
+`define kern1multi00 8'b11110110
+`define kern1multi01 8'b00000111
+`define kern1multi02 8'b00011000
+`define kern1multi03 8'b11001001
+`define kern1multi04 8'b00001011
+`define kern1multi10 8'b00001001
+`define kern1multi11 8'b00011001
+`define kern1multi12 8'b00001000
+`define kern1multi13 8'b00010000
+`define kern1multi14 8'b00010000
+`define kern1multi20 8'b00001100
+`define kern1multi21 8'b00011100
+`define kern1multi22 8'b11101110
+`define kern1multi23 8'b00101100
+`define kern1multi24 8'b00001111
+`define kern1multi30 8'b00001101
+`define kern1multi31 8'b00010110
+`define kern1multi32 8'b11011000
+`define kern1multi33 8'b00100000
+`define kern1multi34 8'b11110100
+`define kern1multi40 8'b11111110
+`define kern1multi41 8'b00011011
+`define kern1multi42 8'b11011101
+`define kern1multi43 8'b11111111
+`define kern1multi44 8'b11100111
+`define kern2multi00 8'b11110110
+`define kern2multi01 8'b11100011
+`define kern2multi02 8'b00010101
+`define kern2multi03 8'b00000110
+`define kern2multi04 8'b11111110
+`define kern2multi10 8'b00000101
+`define kern2multi11 8'b00010111
+`define kern2multi12 8'b00010001
+`define kern2multi13 8'b00100101
+`define kern2multi14 8'b00010011
+`define kern2multi20 8'b00001101
+`define kern2multi21 8'b00011010
+`define kern2multi22 8'b11111110
+`define kern2multi23 8'b00011000
+`define kern2multi24 8'b00001010
+`define kern2multi30 8'b00000101
+`define kern2multi31 8'b00000010
+`define kern2multi32 8'b11100100
+`define kern2multi33 8'b11111000
+`define kern2multi34 8'b11110001
+`define kern2multi40 8'b11110111
+`define kern2multi41 8'b11110000
+`define kern2multi42 8'b11101001
+`define kern2multi43 8'b11110011
+`define kern2multi44 8'b11100011
+`define kern3multi00 8'b11111101
+`define kern3multi01 8'b11000001
+`define kern3multi02 8'b11110100
+`define kern3multi03 8'b00010011
+`define kern3multi04 8'b11001101
+`define kern3multi10 8'b00010010
+`define kern3multi11 8'b11011111
+`define kern3multi12 8'b00010101
+`define kern3multi13 8'b00000100
+`define kern3multi14 8'b00001000
+`define kern3multi20 8'b00010101
+`define kern3multi21 8'b11100010
+`define kern3multi22 8'b00100100
+`define kern3multi23 8'b11111011
+`define kern3multi24 8'b00101011
+`define kern3multi30 8'b00000000
+`define kern3multi31 8'b11010101
+`define kern3multi32 8'b00011111
+`define kern3multi33 8'b11110110
+`define kern3multi34 8'b00001111
+`define kern3multi40 8'b11111110
+`define kern3multi41 8'b11011011
+`define kern3multi42 8'b00010110
+`define kern3multi43 8'b11110111
+`define kern3multi44 8'b11010101
+`define kern4multi00 8'b00000010
+`define kern4multi01 8'b11011001
+`define kern4multi02 8'b11111010
+`define kern4multi03 8'b00000001
+`define kern4multi04 8'b11000101
+`define kern4multi10 8'b00010100
+`define kern4multi11 8'b10111111
+`define kern4multi12 8'b00000011
+`define kern4multi13 8'b11110111
+`define kern4multi14 8'b11111110
+`define kern4multi20 8'b00000011
+`define kern4multi21 8'b11000100
+`define kern4multi22 8'b00011001
+`define kern4multi23 8'b11111111
+`define kern4multi24 8'b00100110
+`define kern4multi30 8'b11110110
+`define kern4multi31 8'b11101110
+`define kern4multi32 8'b00100101
+`define kern4multi33 8'b11111010
+`define kern4multi34 8'b00010111
+`define kern4multi40 8'b11110110
+`define kern4multi41 8'b11110101
+`define kern4multi42 8'b00010110
+`define kern4multi43 8'b11110001
+`define kern4multi44 8'b11101001
 
-`define kern0bias
-`define kern1bias
-`define kern2bias
-`define kern3bias
-`define kern4bias
+`define kern0bias 8'b11110010
+`define kern1bias 8'b00001101
+`define kern2bias 8'b11110010
+`define kern3bias 8'b11111000
+`define kern4bias 8'b11111010
+ 
