@@ -17,6 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7vx485tffg1157-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -31,7 +32,7 @@ set_property target_language Verilog [current_project]
 set_property ip_output_repo d:/GradeFour/FPGA-1/project/3layerCNN/provivado/provivado.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 add_files D:/GradeFour/FPGA-1/project/3layerCNN/data/final3.coe
-add_files D:/GradeFour/FPGA-1/project/3layerCNN/data/7.coe
+add_files D:/GradeFour/FPGA-1/project/3layerCNN/data/7-.coe
 read_verilog -library xil_defaultlib {
   D:/GradeFour/FPGA-1/project/3layerCNN/srcs/defines.v
   D:/GradeFour/FPGA-1/project/3layerCNN/srcs/main.v

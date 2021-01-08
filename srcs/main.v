@@ -182,27 +182,27 @@ reg [2:0] finalstate;
 //--
 
 ////ramrom QUARTUS VERSION----------------------------
-//    reg  [9:0]   addr_FCROM;
-//    wire [107:0]    q_FCROM;
-//    FCROM MYFCROM(
-//        .clock(clk),
-//        .address(addr_FCROM),
-//        .q(q_FCROM)
-//    );
+    //    reg  [9:0]   addr_FCROM;
+    //    wire [107:0]    q_FCROM;
+    //    FCROM MYFCROM(
+    //        .clock(clk),
+    //        .address(addr_FCROM),
+    //        .q(q_FCROM)
+    //    );
 
-//    reg  [6:0]     addr_IFRAM;
-//    wire [63:0]    q_IFRAM;
-//    reg  [63:0]    data_IFRAM;
-//    reg            wren_IFRAM;
+    //    reg  [6:0]     addr_IFRAM;
+    //    wire [63:0]    q_IFRAM;
+    //    reg  [63:0]    data_IFRAM;
+    //    reg            wren_IFRAM;
 
-//    IFRAM MYIFRAM(
-//        .clock(clk),
-//        .data(data_IFRAM),
-//        .address(addr_IFRAM),
-//        .q(q_IFRAM),
-//        .wren(wren_IFRAM)
-//    );
-////--
+    //    IFRAM MYIFRAM(
+    //        .clock(clk),
+    //        .data(data_IFRAM),
+    //        .address(addr_IFRAM),
+    //        .q(q_IFRAM),
+    //        .wren(wren_IFRAM)
+    //    );
+    ////--
 //ramrom VIVADO VERSION----------------------------
     reg  [9:0]   addr_FCROM;
     wire [127:0]    q_FCROM;
@@ -759,7 +759,6 @@ always @(posedge clk or negedge rst) begin
                 end
                 finalstate <= 2;
             end
-    //          2----------------------------------
             2:begin
                 finalstate <= 3;
                 if($signed(cmp0) >= $signed(cmp4)) begin
@@ -773,7 +772,6 @@ always @(posedge clk or negedge rst) begin
                     cmp6 <= cmp3;
                 end
             end
-    //          3----------------------------------
             3: begin
                 finalstate <= 4;
                 if($signed(cmp5) >= $signed(cmp6)) begin
@@ -782,7 +780,6 @@ always @(posedge clk or negedge rst) begin
                     cmp7 <= cmp6;
                 end
             end
-    //          4----------------------------------
             4:begin
                 finalstate <= 5;
                 if($signed(cmp7) >= $signed(cmp2)) begin
@@ -791,41 +788,39 @@ always @(posedge clk or negedge rst) begin
                     cmp8 <= cmp2;
                 end
             end
-    //          5----------------------------------
             5: begin
                 finalstate <= 0;
                 State <= `Idle;
                 done <= 1;
                 if(cmp8 == numout0)begin
-                    // res <= 0;                    
-                    res <= 7;                    
+                    res <= 0;                    
                 end
                 else if(cmp8 == numout1)begin
-                    // res <= 1;
+                    res <= 1;
                 end
                 else if(cmp8 == numout2)begin
-                    // res <= 2;
+                    res <= 2;
                 end
                 else if(cmp8 == numout3)begin
-                    // res <= 3;
+                    res <= 3;
                 end
                 else if(cmp8 == numout4)begin
-                    // res <= 4;
+                    res <= 4;
                 end
                 else if(cmp8 == numout5)begin
-                    // res <= 5;
+                    res <= 5;
                 end
                 else if(cmp8 == numout6)begin
-                    // res <= 6;
+                    res <= 6;
                 end
                 else if(cmp8 == numout7)begin
-                    // res <= 7;
+                    res <= 7;
                 end
                 else if(cmp8 == numout8)begin
-                    // res <= 8;
+                    res <= 8;
                 end
                 else if(cmp8 == numout9)begin
-                    // res <= 9;
+                    res <= 9;
                 end
                 end
         endcase

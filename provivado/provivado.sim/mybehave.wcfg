@@ -11,18 +11,20 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="30174000fs"></ZoomStartTime>
-      <ZoomEndTime time="30930001fs"></ZoomEndTime>
-      <Cursor1Time time="30462000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="305601fs"></ZoomEndTime>
+      <Cursor1Time time="200000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="426"></NameColumnWidth>
-      <ValueColumnWidth column_width="475"></ValueColumnWidth>
+      <ValueColumnWidth column_width="459"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="36" />
+   <WVObjectSize size="27" />
    <wvobject fp_name="/testbench/done" type="logic">
       <obj_property name="ElementShortName">done</obj_property>
       <obj_property name="ObjectShortName">done</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
@@ -35,6 +37,8 @@
    <wvobject fp_name="/testbench/startflag" type="logic">
       <obj_property name="ElementShortName">startflag</obj_property>
       <obj_property name="ObjectShortName">startflag</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/mymain/State" type="array">
       <obj_property name="ElementShortName">State[4:0]</obj_property>
@@ -71,112 +75,108 @@
       <obj_property name="ElementShortName">numout0[24:0]</obj_property>
       <obj_property name="ObjectShortName">numout0[24:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/mymain/numout1" type="array">
       <obj_property name="ElementShortName">numout1[24:0]</obj_property>
       <obj_property name="ObjectShortName">numout1[24:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/mymain/numout2" type="array">
       <obj_property name="ElementShortName">numout2[24:0]</obj_property>
       <obj_property name="ObjectShortName">numout2[24:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/mymain/numout3" type="array">
       <obj_property name="ElementShortName">numout3[24:0]</obj_property>
       <obj_property name="ObjectShortName">numout3[24:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/mymain/numout4" type="array">
       <obj_property name="ElementShortName">numout4[24:0]</obj_property>
       <obj_property name="ObjectShortName">numout4[24:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/mymain/numout5" type="array">
       <obj_property name="ElementShortName">numout5[24:0]</obj_property>
       <obj_property name="ObjectShortName">numout5[24:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/mymain/numout6" type="array">
       <obj_property name="ElementShortName">numout6[24:0]</obj_property>
       <obj_property name="ObjectShortName">numout6[24:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/mymain/numout7" type="array">
       <obj_property name="ElementShortName">numout7[24:0]</obj_property>
       <obj_property name="ObjectShortName">numout7[24:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/mymain/numout8" type="array">
       <obj_property name="ElementShortName">numout8[24:0]</obj_property>
       <obj_property name="ObjectShortName">numout8[24:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/mymain/numout9" type="array">
       <obj_property name="ElementShortName">numout9[24:0]</obj_property>
       <obj_property name="ObjectShortName">numout9[24:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/mymain/plusi24" type="array">
       <obj_property name="ElementShortName">plusi24[20:0]</obj_property>
       <obj_property name="ObjectShortName">plusi24[20:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/mymain/conv_o0" type="array">
       <obj_property name="ElementShortName">conv_o0[20:0]</obj_property>
       <obj_property name="ObjectShortName">conv_o0[20:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/mymain/pool0" type="array">
       <obj_property name="ElementShortName">pool0[20:0]</obj_property>
       <obj_property name="ObjectShortName">pool0[20:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/mymain/pool_o" type="array">
       <obj_property name="ElementShortName">pool_o[20:0]</obj_property>
       <obj_property name="ObjectShortName">pool_o[20:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/mymain/FCweight0" type="array">
       <obj_property name="ElementShortName">FCweight0[7:0]</obj_property>
       <obj_property name="ObjectShortName">FCweight0[7:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/mymain/FCout0" type="array">
       <obj_property name="ElementShortName">FCout0[14:0]</obj_property>
       <obj_property name="ObjectShortName">FCout0[14:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/cmp0" type="array">
-      <obj_property name="ElementShortName">cmp0[24:0]</obj_property>
-      <obj_property name="ObjectShortName">cmp0[24:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/cmp1" type="array">
-      <obj_property name="ElementShortName">cmp1[24:0]</obj_property>
-      <obj_property name="ObjectShortName">cmp1[24:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/cmp2" type="array">
-      <obj_property name="ElementShortName">cmp2[24:0]</obj_property>
-      <obj_property name="ObjectShortName">cmp2[24:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/cmp3" type="array">
-      <obj_property name="ElementShortName">cmp3[24:0]</obj_property>
-      <obj_property name="ObjectShortName">cmp3[24:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/cmp4" type="array">
-      <obj_property name="ElementShortName">cmp4[24:0]</obj_property>
-      <obj_property name="ObjectShortName">cmp4[24:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/cmp5" type="array">
-      <obj_property name="ElementShortName">cmp5[24:0]</obj_property>
-      <obj_property name="ObjectShortName">cmp5[24:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/cmp6" type="array">
-      <obj_property name="ElementShortName">cmp6[24:0]</obj_property>
-      <obj_property name="ObjectShortName">cmp6[24:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/cmp7" type="array">
-      <obj_property name="ElementShortName">cmp7[24:0]</obj_property>
-      <obj_property name="ObjectShortName">cmp7[24:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/mymain/cmp8" type="array">
-      <obj_property name="ElementShortName">cmp8[24:0]</obj_property>
-      <obj_property name="ObjectShortName">cmp8[24:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
 </wave_config>
