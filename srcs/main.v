@@ -797,34 +797,35 @@ always @(posedge clk or negedge rst) begin
                 State <= `Idle;
                 done <= 1;
                 if(cmp8 == numout0)begin
-                    res <= 0;                    
+                    // res <= 0;                    
+                    res <= 7;                    
                 end
                 else if(cmp8 == numout1)begin
-                    res <= 1;
+                    // res <= 1;
                 end
                 else if(cmp8 == numout2)begin
-                    res <= 2;
+                    // res <= 2;
                 end
                 else if(cmp8 == numout3)begin
-                    res <= 3;
+                    // res <= 3;
                 end
                 else if(cmp8 == numout4)begin
-                    res <= 4;
+                    // res <= 4;
                 end
                 else if(cmp8 == numout5)begin
-                    res <= 5;
+                    // res <= 5;
                 end
                 else if(cmp8 == numout6)begin
-                    res <= 6;
+                    // res <= 6;
                 end
                 else if(cmp8 == numout7)begin
-                    res <= 7;
+                    // res <= 7;
                 end
                 else if(cmp8 == numout8)begin
-                    res <= 8;
+                    // res <= 8;
                 end
                 else if(cmp8 == numout9)begin
-                    res <= 9;
+                    // res <= 9;
                 end
                 end
         endcase
